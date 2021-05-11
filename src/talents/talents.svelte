@@ -1,6 +1,6 @@
 <script>
   import { Button, Col, Row } from "sveltestrap";
-  import { talentList } from "./TalentList.js";
+  import { talentList } from "./talentlist.js";
   import { character } from "../stores.js"
 
   /*
