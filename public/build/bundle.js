@@ -981,7 +981,7 @@ var app = (function () {
     }
 
     // (60:25) 
-    function create_if_block_3(ctx) {
+    function create_if_block_3$1(ctx) {
     	let t;
 
     	const block_1 = {
@@ -1003,7 +1003,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block_3.name,
+    		id: create_if_block_3$1.name,
     		type: "if",
     		source: "(60:25) ",
     		ctx
@@ -1013,7 +1013,7 @@ var app = (function () {
     }
 
     // (58:6) {#if close}
-    function create_if_block_2(ctx) {
+    function create_if_block_2$1(ctx) {
     	let span;
 
     	const block_1 = {
@@ -1036,7 +1036,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block_2.name,
+    		id: create_if_block_2$1.name,
     		type: "if",
     		source: "(58:6) {#if close}",
     		ctx
@@ -1051,7 +1051,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_2, create_if_block_3, create_else_block_2];
+    	const if_block_creators = [create_if_block_2$1, create_if_block_3$1, create_else_block_2];
     	const if_blocks = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -2116,39 +2116,7 @@ var app = (function () {
     const races = [{
       name: "Human",
       tier: 1,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
-      {
-        name: 'Agility',
-        value: 0
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
-      ],
+      attributeMods: [],
       characteristics: [{
         name: "Willing to Learn",
         description: `Humans are flexible creatures by nature, and learning is
@@ -2175,26 +2143,6 @@ weaknesses. Only Humans may benefit from the Flaw arc.`
       {
         name: 'Agility',
         value: 1
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
       },
       {
         name: 'Perception',
@@ -2254,14 +2202,7 @@ Blinding is still Blinding. `
     }, {
       name: "Dwarf",
       tier: 2,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
-      {
-        name: 'Agility',
-        value: 0
-      },
+      attributeMods: [
       {
         name: 'Endurance',
         value: 2
@@ -2270,22 +2211,6 @@ Blinding is still Blinding. `
         name: 'Health',
         value: 1
       },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
       ],
       characteristics: [{
         name: "Short and Stout",
@@ -2316,38 +2241,11 @@ bleed rolls`
     }, {
       name: "Seablooded",
       tier: 2,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
+      attributeMods: [
       {
         name: 'Agility',
         value: 1
       },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
       ],
       characteristics: [
         {
@@ -2370,33 +2268,10 @@ bleed rolls`
     }, {
       name: "Zell",
       tier: 3,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
+      attributeMods: [
       {
         name: 'Agility',
         value: 1
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
       },
       {
         name: 'Perception',
@@ -2560,38 +2435,15 @@ how vile.`
     }, {
       name: "Burdinadin",
       tier: 3,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
+      attributeMods: [
       {
         name: 'Agility',
         value: 1
       },
       {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
         name: 'Intelligence',
         value: 1
       },
-      {
-        name: 'Perception',
-        value: 0
-      }
       ],
       characteristics: [
         {
@@ -2710,26 +2562,6 @@ than their HLT + WIL. `
       {
         name: 'Agility',
         value: 1
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
       },
       {
         name: 'Perception',
@@ -2871,38 +2703,11 @@ after bleed.`
     }, {
       name: "Vampire",
       tier: 3,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
+      attributeMods: [
       {
         name: 'Agility',
         value: 2
       },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
       ],
       characteristics: [
         {
@@ -2994,14 +2799,6 @@ Vampires that are killed immediately crumble into piles of powdered carbon, rese
         value: -1
       },
       {
-        name: 'Agility',
-        value: 0
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
         name: 'Health',
         value: -2
       },
@@ -3010,17 +2807,9 @@ Vampires that are killed immediately crumble into piles of powdered carbon, rese
         value: 2
       },
       {
-        name: 'Wit',
-        value: 0
-      },
-      {
         name: 'Intelligence',
         value: 2
       },
-      {
-        name: 'Perception',
-        value: 0
-      }
       ],
       characteristics: [
         {
@@ -3063,38 +2852,11 @@ An Orredin starts with 1 Gnosis, and can increase their Gnosis cap in the follow
     }, {
       name: "Star Vampire",
       tier: 5,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
+      attributeMods: [
       {
         name: 'Agility',
         value: 2
       },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
       ],
       characteristics: [
         {
@@ -3193,38 +2955,7 @@ Ascendants cannot be resurrected as Vampires, and drinking an Ascendant’s bloo
     }, {
       name: "Sarturi Chosen",
       tier: 5,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
-      {
-        name: 'Agility',
-        value: 0
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
+      attributeMods: [
       ],
       characteristics: [
         {
@@ -3352,38 +3083,7 @@ the last 24 hours.`
     }, {
       name: "Genosian Paladin",
       tier: 5,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
-      {
-        name: 'Agility',
-        value: 0
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
+      attributeMods: [
       ],
       characteristics: [
         {
@@ -3613,38 +3313,7 @@ Paladin approaches.`
     }, {
       name: "Dessian Silver Guard",
       tier: 5,
-      attributeMods: [{
-        name: 'Strength',
-        value: 0
-      },
-      {
-        name: 'Agility',
-        value: 0
-      },
-      {
-        name: 'Endurance',
-        value: 0
-      },
-      {
-        name: 'Health',
-        value: 0
-      },
-      {
-        name: 'Willpower',
-        value: 0
-      },
-      {
-        name: 'Wit',
-        value: 0
-      },
-      {
-        name: 'Intelligence',
-        value: 0
-      },
-      {
-        name: 'Perception',
-        value: 0
-      }
+      attributeMods: [
       ],
       characteristics: [
         {
@@ -3958,7 +3627,7 @@ to return, but can be relieved again through another Succor.`
     			t = text(t_value);
     			option.__value = /*race*/ ctx[18].name;
     			option.value = option.__value;
-    			add_location(option, file$d, 58, 8, 1344);
+    			add_location(option, file$d, 58, 8, 1402);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -4001,7 +3670,7 @@ to return, but can be relieved again through another Succor.`
     			}
 
     			attr_dev(optgroup, "label", "Tier " + (/*n*/ ctx[17] + 1));
-    			add_location(optgroup, file$d, 56, 4, 1276);
+    			add_location(optgroup, file$d, 56, 4, 1332);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, optgroup, anchor);
@@ -4075,11 +3744,11 @@ to return, but can be relieved again through another Succor.`
     			p1 = element("p");
     			t2 = text(t2_value);
     			t3 = space();
-    			add_location(strong, file$d, 69, 9, 1635);
-    			add_location(p0, file$d, 69, 6, 1632);
-    			add_location(p1, file$d, 70, 6, 1684);
+    			add_location(strong, file$d, 69, 9, 1704);
+    			add_location(p0, file$d, 69, 6, 1701);
+    			add_location(p1, file$d, 70, 6, 1754);
     			attr_dev(div, "class", "col-sm-4");
-    			add_location(div, file$d, 68, 4, 1603);
+    			add_location(div, file$d, 68, 4, 1671);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4174,7 +3843,7 @@ to return, but can be relieved again through another Succor.`
     		c: function create() {
     			p = element("p");
     			p.textContent = "N/A";
-    			add_location(p, file$d, 82, 4, 1957);
+    			add_location(p, file$d, 82, 4, 2039);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -4236,10 +3905,10 @@ to return, but can be relieved again through another Succor.`
     		c: function create() {
     			p = element("p");
     			t0 = text(t0_value);
-    			t1 = text(":\n    ");
+    			t1 = text(":\r\n    ");
     			if (if_block) if_block.c();
     			t2 = text(t2_value);
-    			add_location(p, file$d, 76, 2, 1869);
+    			add_location(p, file$d, 76, 2, 1945);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -4377,16 +4046,16 @@ to return, but can be relieved again through another Succor.`
     			p3 = element("p");
     			t12 = text("Cost ");
     			t13 = text(/*usedPCP*/ ctx[1]);
-    			add_location(h2, file$d, 53, 0, 1172);
+    			add_location(h2, file$d, 53, 0, 1225);
     			if (/*selectedRaceValue*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[4].call(select));
-    			add_location(select, file$d, 54, 0, 1187);
-    			add_location(p0, file$d, 63, 0, 1441);
-    			add_location(p1, file$d, 64, 0, 1474);
+    			add_location(select, file$d, 54, 0, 1241);
+    			add_location(p0, file$d, 63, 0, 1504);
+    			add_location(p1, file$d, 64, 0, 1538);
     			attr_dev(div, "class", "row justify-content-md-center");
-    			add_location(div, file$d, 66, 0, 1498);
-    			add_location(strong, file$d, 74, 3, 1751);
-    			add_location(p2, file$d, 74, 0, 1748);
-    			add_location(p3, file$d, 85, 0, 1985);
+    			add_location(div, file$d, 66, 0, 1564);
+    			add_location(strong, file$d, 74, 3, 1825);
+    			add_location(p2, file$d, 74, 0, 1822);
+    			add_location(p3, file$d, 85, 0, 2070);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4796,12 +4465,12 @@ to return, but can be relieved again through another Succor.`
     			p1 = element("p");
     			input = element("input");
     			t2 = space();
-    			add_location(p0, file$c, 151, 2, 3919);
+    			add_location(p0, file$c, 151, 2, 3975);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "1");
     			attr_dev(input, "max", "8");
-    			add_location(input, file$c, 152, 5, 3949);
-    			add_location(p1, file$c, 152, 2, 3946);
+    			add_location(input, file$c, 152, 5, 4005);
+    			add_location(p1, file$c, 152, 2, 4002);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5069,8 +4738,8 @@ to return, but can be relieved again through another Succor.`
     			t1 = text(":");
     			p1 = element("p");
     			t2 = text(t2_value);
-    			add_location(p0, file$c, 162, 0, 4179);
-    			add_location(p1, file$c, 162, 24, 4203);
+    			add_location(p0, file$c, 162, 0, 4235);
+    			add_location(p1, file$c, 162, 24, 4259);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5174,8 +4843,8 @@ to return, but can be relieved again through another Succor.`
     			p1 = element("p");
     			t2 = text(t2_value);
     			t3 = space();
-    			add_location(p0, file$c, 167, 0, 4285);
-    			add_location(p1, file$c, 167, 24, 4309);
+    			add_location(p0, file$c, 167, 0, 4341);
+    			add_location(p1, file$c, 167, 24, 4365);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -5463,9 +5132,9 @@ to return, but can be relieved again through another Succor.`
     			t7 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			add_location(h3, file$c, 147, 0, 3846);
-    			add_location(p0, file$c, 156, 0, 4040);
-    			add_location(p1, file$c, 157, 0, 4068);
+    			add_location(h3, file$c, 147, 0, 3902);
+    			add_location(p0, file$c, 156, 0, 4096);
+    			add_location(p1, file$c, 157, 0, 4124);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5606,6 +5275,7 @@ to return, but can be relieved again through another Succor.`
     }
 
     function getSDB(input) {
+    	//khopfix sbd = str up to 4, +1 for every 2 beyond that
     	return getAttrByName("Strength", input) * 2;
     }
 
@@ -6087,7 +5757,7 @@ to return, but can be relieved again through another Succor.`
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading";
-    			add_location(p, file$b, 70, 4, 1646);
+    			add_location(p, file$b, 70, 4, 1716);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6195,7 +5865,7 @@ to return, but can be relieved again through another Succor.`
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			add_location(p, file$b, 59, 8, 1410);
+    			add_location(p, file$b, 59, 8, 1469);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6275,13 +5945,13 @@ to return, but can be relieved again through another Succor.`
     			input = element("input");
     			t5 = space();
     			attr_dev(div0, "class", "col-sm-2");
-    			add_location(div0, file$b, 55, 6, 1252);
+    			add_location(div0, file$b, 55, 6, 1307);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "max", input_max_value = /*boon*/ ctx[7].cost.length);
-    			add_location(input, file$b, 62, 8, 1489);
+    			add_location(input, file$b, 62, 8, 1551);
     			attr_dev(div1, "class", "col-sm-2");
-    			add_location(div1, file$b, 61, 6, 1458);
+    			add_location(div1, file$b, 61, 6, 1519);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -6590,9 +6260,9 @@ to return, but can be relieved again through another Succor.`
     			t6 = text(t6_value);
     			t7 = space();
     			create_component(row.$$.fragment);
-    			add_location(h2, file$b, 49, 0, 1094);
-    			add_location(p0, file$b, 50, 0, 1120);
-    			add_location(p1, file$b, 51, 0, 1147);
+    			add_location(h2, file$b, 49, 0, 1143);
+    			add_location(p0, file$b, 50, 0, 1170);
+    			add_location(p1, file$b, 51, 0, 1198);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6938,7 +6608,7 @@ to return, but can be relieved again through another Succor.`
     			p = element("p");
     			t0 = text("Used PCP: ");
     			t1 = text(/*usedPCP*/ ctx[0]);
-    			add_location(p, file$a, 275, 4, 6787);
+    			add_location(p, file$a, 275, 4, 7062);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6982,7 +6652,7 @@ to return, but can be relieved again through another Succor.`
     			t2 = text(" (");
     			t3 = text(t3_value);
     			t4 = text(")");
-    			add_location(p, file$a, 278, 4, 6835);
+    			add_location(p, file$a, 278, 4, 7113);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -7102,7 +6772,7 @@ to return, but can be relieved again through another Succor.`
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			add_location(p, file$a, 294, 10, 7318);
+    			add_location(p, file$a, 294, 10, 7612);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -7153,7 +6823,7 @@ to return, but can be relieved again through another Succor.`
     			}
 
     			if (/*packet*/ ctx[25].activeChoice === void 0) add_render_callback(select_change_handler);
-    			add_location(select, file$a, 288, 10, 7121);
+    			add_location(select, file$a, 288, 10, 7409);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, select, anchor);
@@ -7231,7 +6901,7 @@ to return, but can be relieved again through another Succor.`
     			t = text(t_value);
     			option.__value = /*i*/ ctx[29];
     			option.value = option.__value;
-    			add_location(option, file$a, 290, 14, 7216);
+    			add_location(option, file$a, 290, 14, 7506);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7424,8 +7094,8 @@ to return, but can be relieved again through another Succor.`
     			t3 = space();
     			create_component(button1.$$.fragment);
     			t4 = space();
-    			add_location(strong, file$a, 285, 9, 7001);
-    			add_location(p, file$a, 285, 6, 6998);
+    			add_location(strong, file$a, 285, 9, 7286);
+    			add_location(p, file$a, 285, 6, 7283);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -7697,12 +7367,12 @@ to return, but can be relieved again through another Succor.`
     			p1 = element("p");
     			input = element("input");
     			t2 = space();
-    			add_location(p0, file$a, 307, 6, 7608);
+    			add_location(p0, file$a, 307, 6, 7915);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", input_min_value = /*getMinSkillInput*/ ctx[8](/*skill*/ ctx[22].name));
     			attr_dev(input, "max", "8");
-    			add_location(input, file$a, 309, 8, 7646);
-    			add_location(p1, file$a, 308, 6, 7634);
+    			add_location(input, file$a, 309, 8, 7955);
+    			add_location(p1, file$a, 308, 6, 7942);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -7959,9 +7629,9 @@ to return, but can be relieved again through another Succor.`
     			h31.textContent = "Skills";
     			t6 = space();
     			create_component(row2.$$.fragment);
-    			add_location(h30, file$a, 281, 0, 6925);
-    			add_location(hr, file$a, 302, 0, 7531);
-    			add_location(h31, file$a, 303, 0, 7538);
+    			add_location(h30, file$a, 281, 0, 7206);
+    			add_location(hr, file$a, 302, 0, 7833);
+    			add_location(h31, file$a, 303, 0, 7841);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8576,7 +8246,7 @@ to return, but can be relieved again through another Succor.`
     			option.__value = option_value_value = /*boonOption*/ ctx[7];
     			option.value = option.__value;
     			option.disabled = option_disabled_value = /*hasBeenPicked*/ ctx[2](/*boonOption*/ ctx[7]);
-    			add_location(option, file$9, 38, 6, 1144);
+    			add_location(option, file$9, 38, 6, 1149);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8626,7 +8296,7 @@ to return, but can be relieved again through another Succor.`
     			option.value = option.__value;
     			option.disabled = option_disabled_value = /*hasBeenPicked*/ ctx[2](/*boonOption*/ ctx[7]);
     			option.selected = true;
-    			add_location(option, file$9, 36, 6, 1027);
+    			add_location(option, file$9, 36, 6, 1032);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -8727,7 +8397,7 @@ to return, but can be relieved again through another Succor.`
     			}
 
     			if (/*selectedBoonOptions*/ ctx[1][/*i*/ ctx[6]] === void 0) add_render_callback(select_change_handler);
-    			add_location(select, file$9, 33, 2, 894);
+    			add_location(select, file$9, 33, 2, 899);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, select, anchor);
@@ -8855,7 +8525,7 @@ to return, but can be relieved again through another Succor.`
     	const block = {
     		c: function create() {
     			br = element("br");
-    			add_location(br, file$9, 45, 4, 1336);
+    			add_location(br, file$9, 45, 4, 1341);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, br, anchor);
@@ -10093,7 +9763,7 @@ to return, but can be relieved again through another Succor.`
     			p = element("p");
     			t0 = text("Available Talents: ");
     			t1 = text(t1_value);
-    			add_location(p, file$7, 93, 0, 2298);
+    			add_location(p, file$7, 93, 0, 2391);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10191,7 +9861,7 @@ to return, but can be relieved again through another Succor.`
     			t1 = space();
     			t2 = text(t2_value);
     			t3 = space();
-    			add_location(p, file$7, 99, 6, 2458);
+    			add_location(p, file$7, 99, 6, 2557);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10384,7 +10054,7 @@ to return, but can be relieved again through another Succor.`
     			t = text(t_value);
     			option.__value = /*talent*/ ctx[15].name;
     			option.value = option.__value;
-    			add_location(option, file$7, 105, 4, 2601);
+    			add_location(option, file$7, 105, 4, 2706);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -10489,10 +10159,10 @@ to return, but can be relieved again through another Succor.`
     			t4 = space();
     			p2 = element("p");
     			t5 = text(t5_value);
-    			add_location(hr, file$7, 119, 2, 3057);
-    			add_location(p0, file$7, 120, 2, 3066);
-    			add_location(p1, file$7, 121, 2, 3104);
-    			add_location(p2, file$7, 122, 2, 3143);
+    			add_location(hr, file$7, 119, 2, 3176);
+    			add_location(p0, file$7, 120, 2, 3186);
+    			add_location(p1, file$7, 121, 2, 3225);
+    			add_location(p2, file$7, 122, 2, 3265);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr, anchor);
@@ -10640,13 +10310,13 @@ to return, but can be relieved again through another Succor.`
     			t6 = space();
     			p3 = element("p");
     			t7 = text(t7_value);
-    			add_location(hr, file$7, 112, 4, 2890);
-    			add_location(strong0, file$7, 113, 27, 2924);
-    			add_location(strong1, file$7, 113, 7, 2904);
-    			add_location(p0, file$7, 113, 4, 2901);
-    			add_location(p1, file$7, 114, 4, 2952);
-    			add_location(p2, file$7, 115, 4, 2983);
-    			add_location(p3, file$7, 116, 4, 3015);
+    			add_location(hr, file$7, 112, 4, 3002);
+    			add_location(strong0, file$7, 113, 27, 3037);
+    			add_location(strong1, file$7, 113, 7, 3017);
+    			add_location(p0, file$7, 113, 4, 3014);
+    			add_location(p1, file$7, 114, 4, 3066);
+    			add_location(p2, file$7, 115, 4, 3098);
+    			add_location(p3, file$7, 116, 4, 3131);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr, anchor);
@@ -10793,9 +10463,9 @@ to return, but can be relieved again through another Succor.`
     			t6 = space();
     			if_block.c();
     			if_block_anchor = empty();
-    			add_location(h3, file$7, 90, 0, 2269);
+    			add_location(h3, file$7, 90, 0, 2359);
     			if (/*selectedTalentName*/ ctx[1] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[7].call(select));
-    			add_location(select, file$7, 103, 0, 2522);
+    			add_location(select, file$7, 103, 0, 2625);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11754,6 +11424,7 @@ resolved at -1 TN if Simplicity is active.`
       "requirements": "Must be reasonably eligible to have received Glade security training.",
       "cost": 3,
       "profNum": 5,
+      "note": `Proficiencies must be chosen from: Wrestling, Pugilism, Dagger, Burdinadin Firearm, 1H Blunt. Other proficiencies cost an additional 1 S&P/arc point above their normal cost`,
       "bonuses": [{
         "name": "Stop Resisting!",
         "description": `Inflict an additional +3 stun to enemies that are Prone.`
@@ -11767,6 +11438,13 @@ resolved at -1 TN if Simplicity is active.`
           "description": `Inflict +1 damage whenever you land a hit to the head.`
         },
       ]
+      ],
+      "allowedProficiencies": [
+        "Burdinadin Firearm",
+        "Wrestling",
+        "Pugilism",
+        "Dagger",
+        "1H Blunt"
       ]
     },
     {
@@ -11775,6 +11453,7 @@ resolved at -1 TN if Simplicity is active.`
       "requirements": `Must be reasonably eligible to have received training in the use of Burdinadin Combat Armor`,
       "cost": 3,
       "profNum": 3,
+      "note": `Proficiencies must be chosen from: Wrestling, Pugilism, Burdinadin Firearm. Other proficiencies cost an additional 1 S&P/arc point above their normal cost`,
       "bonuses": [{
         "name": "Just Like the Simulations",
         "description": `When you tie an opponent's Missile Defense you still deal full damage. All that training really paid off!`
@@ -11788,6 +11467,11 @@ resolved at -1 TN if Simplicity is active.`
         "description": `The opposing team never won a simulated match when you were on top. Increase Missile Defense gained from cover by +1. Additionally if you have moved into cover during your last action, you count as also having performed the Aim action once.`
       },
       ]
+      ],
+      "allowedProficiencies": [
+        "Burdinadin Firearm",
+        "Wrestling",
+        "Pugilism",
       ]
     }
     ];
@@ -11870,7 +11554,7 @@ resolved at -1 TN if Simplicity is active.`
     	return child_ctx;
     }
 
-    // (264:2) <Col>
+    // (271:2) <Col>
     function create_default_slot_12$1(ctx) {
     	let p;
     	let t0;
@@ -11881,7 +11565,7 @@ resolved at -1 TN if Simplicity is active.`
     			p = element("p");
     			t0 = text("Used PCP: ");
     			t1 = text(/*usedPCP*/ ctx[0]);
-    			add_location(p, file$5, 264, 4, 6267);
+    			add_location(p, file$5, 271, 4, 6505);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11900,14 +11584,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_12$1.name,
     		type: "slot",
-    		source: "(264:2) <Col>",
+    		source: "(271:2) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (267:2) <Col>
+    // (274:2) <Col>
     function create_default_slot_11$1(ctx) {
     	let p;
     	let t0;
@@ -11925,7 +11609,7 @@ resolved at -1 TN if Simplicity is active.`
     			t2 = text(" (");
     			t3 = text(t3_value);
     			t4 = text(")");
-    			add_location(p, file$5, 267, 4, 6315);
+    			add_location(p, file$5, 274, 4, 6553);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -11948,14 +11632,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_11$1.name,
     		type: "slot",
-    		source: "(267:2) <Col>",
+    		source: "(274:2) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (263:0) <Row>
+    // (270:0) <Row>
     function create_default_slot_10$1(ctx) {
     	let col0;
     	let t;
@@ -12028,15 +11712,15 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_10$1.name,
     		type: "slot",
-    		source: "(263:0) <Row>",
+    		source: "(270:0) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (277:8) {#if school.choice != ''}
-    function create_if_block_1(ctx) {
+    // (284:8) {#if school.choice != ''}
+    function create_if_block_3(ctx) {
     	let t0;
     	let t1_value = /*school*/ ctx[45].choice + "";
     	let t1;
@@ -12065,16 +11749,16 @@ resolved at -1 TN if Simplicity is active.`
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block_3.name,
     		type: "if",
-    		source: "(277:8) {#if school.choice != ''}",
+    		source: "(284:8) {#if school.choice != ''}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (273:4) <Col>
+    // (280:4) <Col>
     function create_default_slot_9$1(ctx) {
     	let p;
     	let t0_value = /*school*/ ctx[45].name + "";
@@ -12084,7 +11768,7 @@ resolved at -1 TN if Simplicity is active.`
     	let t2;
     	let t3;
     	let t4;
-    	let if_block = /*school*/ ctx[45].choice != "" && create_if_block_1(ctx);
+    	let if_block = /*school*/ ctx[45].choice != "" && create_if_block_3(ctx);
 
     	const block = {
     		c: function create() {
@@ -12095,7 +11779,7 @@ resolved at -1 TN if Simplicity is active.`
     			t3 = space();
     			if (if_block) if_block.c();
     			t4 = space();
-    			add_location(p, file$5, 273, 6, 6486);
+    			add_location(p, file$5, 280, 6, 6724);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -12114,7 +11798,7 @@ resolved at -1 TN if Simplicity is active.`
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_1(ctx);
+    					if_block = create_if_block_3(ctx);
     					if_block.c();
     					if_block.m(p, null);
     				}
@@ -12134,14 +11818,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(273:4) <Col>",
+    		source: "(280:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (272:2) {#each activeSchools.filter((school) => school.level > 0) as school}
+    // (279:2) {#each activeSchools.filter((school) => school.level > 0) as school}
     function create_each_block_5(ctx) {
     	let col;
     	let current;
@@ -12189,14 +11873,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_each_block_5.name,
     		type: "each",
-    		source: "(272:2) {#each activeSchools.filter((school) => school.level > 0) as school}",
+    		source: "(279:2) {#each activeSchools.filter((school) => school.level > 0) as school}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (271:0) <Row>
+    // (278:0) <Row>
     function create_default_slot_8$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -12285,14 +11969,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(271:0) <Row>",
+    		source: "(278:0) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (285:6) {#each schoolList as school, i}
+    // (292:6) {#each schoolList as school, i}
     function create_each_block_4(ctx) {
     	let option;
     	let t_value = /*school*/ ctx[45].name + "";
@@ -12305,7 +11989,7 @@ resolved at -1 TN if Simplicity is active.`
     			t = text(t_value);
     			option.__value = option_value_value = /*school*/ ctx[45].name;
     			option.value = option.__value;
-    			add_location(option, file$5, 285, 8, 6736);
+    			add_location(option, file$5, 292, 8, 6974);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -12328,14 +12012,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_each_block_4.name,
     		type: "each",
-    		source: "(285:6) {#each schoolList as school, i}",
+    		source: "(292:6) {#each schoolList as school, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (289:4) <Button on:click={addSchool(selectedSchoolName)}>
+    // (296:4) <Button on:click={addSchool(selectedSchoolName)}>
     function create_default_slot_7$1(ctx) {
     	let t;
 
@@ -12355,14 +12039,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(289:4) <Button on:click={addSchool(selectedSchoolName)}>",
+    		source: "(296:4) <Button on:click={addSchool(selectedSchoolName)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (290:4) <Button on:click={removeSchool(selectedSchoolName)}>
+    // (297:4) <Button on:click={removeSchool(selectedSchoolName)}>
     function create_default_slot_6$1(ctx) {
     	let t;
 
@@ -12382,14 +12066,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(290:4) <Button on:click={removeSchool(selectedSchoolName)}>",
+    		source: "(297:4) <Button on:click={removeSchool(selectedSchoolName)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (283:2) <Col>
+    // (290:2) <Col>
     function create_default_slot_5$1(ctx) {
     	let select;
     	let t0;
@@ -12444,7 +12128,7 @@ resolved at -1 TN if Simplicity is active.`
     			t1 = space();
     			create_component(button1.$$.fragment);
     			if (/*selectedSchoolName*/ ctx[5] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[17].call(select));
-    			add_location(select, file$5, 283, 4, 6649);
+    			add_location(select, file$5, 290, 4, 6887);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, select, anchor);
@@ -12538,14 +12222,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(283:2) <Col>",
+    		source: "(290:2) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (282:0) <Row>
+    // (289:0) <Row>
     function create_default_slot_4$1(ctx) {
     	let col;
     	let current;
@@ -12593,14 +12277,99 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(282:0) <Row>",
+    		source: "(289:0) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (308:2) {:else}
+    // (305:0) {#if selectedSchool.hasOwnProperty('note')}
+    function create_if_block_1(ctx) {
+    	let if_block_anchor;
+    	let if_block = /*selectedSchool*/ ctx[4].note && create_if_block_2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*selectedSchool*/ ctx[4].note) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_2(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(305:0) {#if selectedSchool.hasOwnProperty('note')}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (306:2) {#if selectedSchool.note}
+    function create_if_block_2(ctx) {
+    	let p;
+    	let strong;
+    	let t1_value = /*selectedSchool*/ ctx[4].note + "";
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			strong = element("strong");
+    			strong.textContent = "Note: ";
+    			t1 = text(t1_value);
+    			add_location(strong, file$5, 306, 7, 7428);
+    			add_location(p, file$5, 306, 4, 7425);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, strong);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*selectedSchool*/ 16 && t1_value !== (t1_value = /*selectedSchool*/ ctx[4].note + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(306:2) {#if selectedSchool.note}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (320:2) {:else}
     function create_else_block(ctx) {
     	let p;
     	let strong;
@@ -12617,8 +12386,8 @@ resolved at -1 TN if Simplicity is active.`
     			t0 = text(t0_value);
     			t1 = text(": ");
     			t2 = text(t2_value);
-    			add_location(strong, file$5, 308, 7, 7528);
-    			add_location(p, file$5, 308, 4, 7525);
+    			add_location(strong, file$5, 320, 7, 7908);
+    			add_location(p, file$5, 320, 4, 7905);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -12640,14 +12409,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(308:2) {:else}",
+    		source: "(320:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (301:2) {#if Array.isArray(bonus)}
+    // (313:2) {#if Array.isArray(bonus)}
     function create_if_block(ctx) {
     	let select;
     	let t0;
@@ -12676,8 +12445,8 @@ resolved at -1 TN if Simplicity is active.`
     			p = element("p");
     			t1 = text(t1_value);
     			if (/*selectedBonusName*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[18].call(select));
-    			add_location(select, file$5, 301, 4, 7300);
-    			add_location(p, file$5, 306, 4, 7476);
+    			add_location(select, file$5, 313, 4, 7680);
+    			add_location(p, file$5, 318, 4, 7856);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, select, anchor);
@@ -12741,14 +12510,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(301:2) {#if Array.isArray(bonus)}",
+    		source: "(313:2) {#if Array.isArray(bonus)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (303:6) {#each bonus as bonusOption}
+    // (315:6) {#each bonus as bonusOption}
     function create_each_block_3(ctx) {
     	let option;
     	let t_value = /*bonusOption*/ ctx[42].name + "";
@@ -12761,7 +12530,7 @@ resolved at -1 TN if Simplicity is active.`
     			t = text(t_value);
     			option.__value = option_value_value = /*bonusOption*/ ctx[42].name;
     			option.value = option.__value;
-    			add_location(option, file$5, 303, 8, 7383);
+    			add_location(option, file$5, 315, 8, 7763);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -12784,14 +12553,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(303:6) {#each bonus as bonusOption}",
+    		source: "(315:6) {#each bonus as bonusOption}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:0) {#each selectedSchool.bonuses as bonus}
+    // (312:0) {#each selectedSchool.bonuses as bonus}
     function create_each_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -12837,14 +12606,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(300:0) {#each selectedSchool.bonuses as bonus}",
+    		source: "(312:0) {#each selectedSchool.bonuses as bonus}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (315:4) <Col>
+    // (327:4) <Col>
     function create_default_slot_3$1(ctx) {
     	let p0;
     	let t0_value = /*prof*/ ctx[34].name + "";
@@ -12864,13 +12633,13 @@ resolved at -1 TN if Simplicity is active.`
     			p1 = element("p");
     			input = element("input");
     			t2 = space();
-    			add_location(p0, file$5, 315, 6, 7701);
+    			add_location(p0, file$5, 327, 6, 8081);
     			attr_dev(input, "type", "checkbox");
     			input.__value = /*prof*/ ctx[34].name;
     			input.value = input.__value;
     			/*$$binding_groups*/ ctx[20][0].push(input);
-    			add_location(input, file$5, 317, 8, 7738);
-    			add_location(p1, file$5, 316, 6, 7726);
+    			add_location(input, file$5, 329, 8, 8118);
+    			add_location(p1, file$5, 328, 6, 8106);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -12910,14 +12679,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(315:4) <Col>",
+    		source: "(327:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (314:2) {#each proficiencyList.filter((prof) => prof.type == 'MELEE') as prof}
+    // (326:2) {#each proficiencyList.filter((prof) => prof.type == 'MELEE') as prof}
     function create_each_block_1(ctx) {
     	let col;
     	let current;
@@ -12965,14 +12734,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(314:2) {#each proficiencyList.filter((prof) => prof.type == 'MELEE') as prof}",
+    		source: "(326:2) {#each proficiencyList.filter((prof) => prof.type == 'MELEE') as prof}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (313:0) <Row>
+    // (325:0) <Row>
     function create_default_slot_2$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -13061,14 +12830,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(313:0) <Row>",
+    		source: "(325:0) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (329:4) <Col>
+    // (341:4) <Col>
     function create_default_slot_1$1(ctx) {
     	let p0;
     	let t0_value = /*prof*/ ctx[34].name + "";
@@ -13088,13 +12857,13 @@ resolved at -1 TN if Simplicity is active.`
     			p1 = element("p");
     			input = element("input");
     			t2 = space();
-    			add_location(p0, file$5, 329, 6, 8014);
+    			add_location(p0, file$5, 341, 6, 8394);
     			attr_dev(input, "type", "checkbox");
     			input.__value = /*prof*/ ctx[34].name;
     			input.value = input.__value;
     			/*$$binding_groups*/ ctx[20][0].push(input);
-    			add_location(input, file$5, 331, 8, 8051);
-    			add_location(p1, file$5, 330, 6, 8039);
+    			add_location(input, file$5, 343, 8, 8431);
+    			add_location(p1, file$5, 342, 6, 8419);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -13134,14 +12903,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(329:4) <Col>",
+    		source: "(341:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:2) {#each proficiencyList.filter((prof) => prof.type == 'MISSILE') as prof}
+    // (340:2) {#each proficiencyList.filter((prof) => prof.type == 'MISSILE') as prof}
     function create_each_block$1(ctx) {
     	let col;
     	let current;
@@ -13189,14 +12958,14 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(328:2) {#each proficiencyList.filter((prof) => prof.type == 'MISSILE') as prof}",
+    		source: "(340:2) {#each proficiencyList.filter((prof) => prof.type == 'MISSILE') as prof}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (327:0) <Row>
+    // (339:0) <Row>
     function create_default_slot$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -13285,7 +13054,7 @@ resolved at -1 TN if Simplicity is active.`
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(327:0) <Row>",
+    		source: "(339:0) <Row>",
     		ctx
     	});
 
@@ -13314,26 +13083,28 @@ resolved at -1 TN if Simplicity is active.`
 
     	let t8;
     	let t9;
+    	let show_if = /*selectedSchool*/ ctx[4].hasOwnProperty("note");
+    	let t10;
     	let p2;
     	let strong1;
-    	let t11_value = /*selectedSchool*/ ctx[4].cost + "";
-    	let t11;
+    	let t12_value = /*selectedSchool*/ ctx[4].cost + "";
     	let t12;
+    	let t13;
     	let p3;
     	let strong2;
-    	let t14;
-    	let t15_value = /*selectedSchool*/ ctx[4].profNum + "";
     	let t15;
+    	let t16_value = /*selectedSchool*/ ctx[4].profNum + "";
     	let t16;
     	let t17;
-    	let hr;
     	let t18;
-    	let row3;
+    	let hr;
     	let t19;
-    	let row4;
+    	let row3;
     	let t20;
-    	let talents_1;
+    	let row4;
     	let t21;
+    	let talents_1;
+    	let t22;
     	let superiormaneuvers;
     	let current;
 
@@ -13361,6 +13132,7 @@ resolved at -1 TN if Simplicity is active.`
     			$$inline: true
     		});
 
+    	let if_block = show_if && create_if_block_1(ctx);
     	let each_value_2 = /*selectedSchool*/ ctx[4].bonuses;
     	validate_each_argument(each_value_2);
     	let each_blocks = [];
@@ -13416,41 +13188,43 @@ resolved at -1 TN if Simplicity is active.`
     			strong0.textContent = "Requirements:\n  ";
     			t8 = text(t8_value);
     			t9 = space();
+    			if (if_block) if_block.c();
+    			t10 = space();
     			p2 = element("p");
     			strong1 = element("strong");
     			strong1.textContent = "Cost: ";
-    			t11 = text(t11_value);
-    			t12 = space();
+    			t12 = text(t12_value);
+    			t13 = space();
     			p3 = element("p");
     			strong2 = element("strong");
     			strong2.textContent = "Proficiencies:";
-    			t14 = space();
-    			t15 = text(t15_value);
-    			t16 = space();
+    			t15 = space();
+    			t16 = text(t16_value);
+    			t17 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t17 = space();
-    			hr = element("hr");
     			t18 = space();
-    			create_component(row3.$$.fragment);
+    			hr = element("hr");
     			t19 = space();
-    			create_component(row4.$$.fragment);
+    			create_component(row3.$$.fragment);
     			t20 = space();
-    			create_component(talents_1.$$.fragment);
+    			create_component(row4.$$.fragment);
     			t21 = space();
+    			create_component(talents_1.$$.fragment);
+    			t22 = space();
     			create_component(superiormaneuvers.$$.fragment);
-    			add_location(h2, file$5, 260, 0, 6213);
-    			add_location(p0, file$5, 292, 0, 6962);
-    			add_location(strong0, file$5, 294, 2, 7004);
-    			add_location(p1, file$5, 293, 0, 6998);
-    			add_location(strong1, file$5, 297, 3, 7114);
-    			add_location(p2, file$5, 297, 0, 7111);
-    			add_location(strong2, file$5, 298, 3, 7166);
-    			add_location(p3, file$5, 298, 0, 7163);
-    			add_location(hr, file$5, 311, 0, 7599);
+    			add_location(h2, file$5, 267, 0, 6451);
+    			add_location(p0, file$5, 299, 0, 7200);
+    			add_location(strong0, file$5, 301, 2, 7242);
+    			add_location(p1, file$5, 300, 0, 7236);
+    			add_location(strong1, file$5, 309, 3, 7494);
+    			add_location(p2, file$5, 309, 0, 7491);
+    			add_location(strong2, file$5, 310, 3, 7546);
+    			add_location(p3, file$5, 310, 0, 7543);
+    			add_location(hr, file$5, 323, 0, 7979);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13471,29 +13245,31 @@ resolved at -1 TN if Simplicity is active.`
     			append_dev(p1, strong0);
     			append_dev(p1, t8);
     			insert_dev(target, t9, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t10, anchor);
     			insert_dev(target, p2, anchor);
     			append_dev(p2, strong1);
-    			append_dev(p2, t11);
-    			insert_dev(target, t12, anchor);
+    			append_dev(p2, t12);
+    			insert_dev(target, t13, anchor);
     			insert_dev(target, p3, anchor);
     			append_dev(p3, strong2);
-    			append_dev(p3, t14);
     			append_dev(p3, t15);
-    			insert_dev(target, t16, anchor);
+    			append_dev(p3, t16);
+    			insert_dev(target, t17, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(target, anchor);
     			}
 
-    			insert_dev(target, t17, anchor);
-    			insert_dev(target, hr, anchor);
     			insert_dev(target, t18, anchor);
-    			mount_component(row3, target, anchor);
+    			insert_dev(target, hr, anchor);
     			insert_dev(target, t19, anchor);
-    			mount_component(row4, target, anchor);
+    			mount_component(row3, target, anchor);
     			insert_dev(target, t20, anchor);
-    			mount_component(talents_1, target, anchor);
+    			mount_component(row4, target, anchor);
     			insert_dev(target, t21, anchor);
+    			mount_component(talents_1, target, anchor);
+    			insert_dev(target, t22, anchor);
     			mount_component(superiormaneuvers, target, anchor);
     			current = true;
     		},
@@ -13525,8 +13301,23 @@ resolved at -1 TN if Simplicity is active.`
     			? /*selectedSchool*/ ctx[4].requirements
     			: "None") + "")) set_data_dev(t8, t8_value);
 
-    			if ((!current || dirty[0] & /*selectedSchool*/ 16) && t11_value !== (t11_value = /*selectedSchool*/ ctx[4].cost + "")) set_data_dev(t11, t11_value);
-    			if ((!current || dirty[0] & /*selectedSchool*/ 16) && t15_value !== (t15_value = /*selectedSchool*/ ctx[4].profNum + "")) set_data_dev(t15, t15_value);
+    			if (dirty[0] & /*selectedSchool*/ 16) show_if = /*selectedSchool*/ ctx[4].hasOwnProperty("note");
+
+    			if (show_if) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1(ctx);
+    					if_block.c();
+    					if_block.m(t10.parentNode, t10);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if ((!current || dirty[0] & /*selectedSchool*/ 16) && t12_value !== (t12_value = /*selectedSchool*/ ctx[4].cost + "")) set_data_dev(t12, t12_value);
+    			if ((!current || dirty[0] & /*selectedSchool*/ 16) && t16_value !== (t16_value = /*selectedSchool*/ ctx[4].profNum + "")) set_data_dev(t16, t16_value);
 
     			if (dirty[0] & /*selectedBonus, selectedBonusName, selectedSchool*/ 1044) {
     				each_value_2 = /*selectedSchool*/ ctx[4].bonuses;
@@ -13541,7 +13332,7 @@ resolved at -1 TN if Simplicity is active.`
     					} else {
     						each_blocks[i] = create_each_block_2(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(t17.parentNode, t17);
+    						each_blocks[i].m(t18.parentNode, t18);
     					}
     				}
 
@@ -13607,20 +13398,22 @@ resolved at -1 TN if Simplicity is active.`
     			if (detaching) detach_dev(t6);
     			if (detaching) detach_dev(p1);
     			if (detaching) detach_dev(t9);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t10);
     			if (detaching) detach_dev(p2);
-    			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(t13);
     			if (detaching) detach_dev(p3);
-    			if (detaching) detach_dev(t16);
-    			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(t17);
-    			if (detaching) detach_dev(hr);
+    			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(t18);
-    			destroy_component(row3, detaching);
+    			if (detaching) detach_dev(hr);
     			if (detaching) detach_dev(t19);
-    			destroy_component(row4, detaching);
+    			destroy_component(row3, detaching);
     			if (detaching) detach_dev(t20);
-    			destroy_component(talents_1, detaching);
+    			destroy_component(row4, detaching);
     			if (detaching) detach_dev(t21);
+    			destroy_component(talents_1, detaching);
+    			if (detaching) detach_dev(t22);
     			destroy_component(superiormaneuvers, detaching);
     		}
     	};
@@ -13805,6 +13598,12 @@ resolved at -1 TN if Simplicity is active.`
 
     			profs++;
     			profTotal += profCost;
+
+    			if (selectedSchool.hasOwnProperty("allowedProficiencies")) {
+    				if (selectedSchool.allowedProficiencies.indexOf(activeProficiencies[n]) === -1) {
+    					profTotal++;
+    				}
+    			}
     		}
 
     		sum += profTotal;
@@ -13945,9 +13744,9 @@ resolved at -1 TN if Simplicity is active.`
     		selectedBonusName,
     		isHuman,
     		activeProficiencies,
+    		selectedSchool,
     		superiorManeuvers,
     		talents,
-    		selectedSchool,
     		selectedSchoolName,
     		selectedBonus,
     		$character
@@ -13962,9 +13761,9 @@ resolved at -1 TN if Simplicity is active.`
     		if ("selectedBonusName" in $$props) $$invalidate(2, selectedBonusName = $$props.selectedBonusName);
     		if ("isHuman" in $$props) isHuman = $$props.isHuman;
     		if ("activeProficiencies" in $$props) $$invalidate(3, activeProficiencies = $$props.activeProficiencies);
+    		if ("selectedSchool" in $$props) $$invalidate(4, selectedSchool = $$props.selectedSchool);
     		if ("superiorManeuvers" in $$props) $$invalidate(8, superiorManeuvers = $$props.superiorManeuvers);
     		if ("talents" in $$props) $$invalidate(9, talents = $$props.talents);
-    		if ("selectedSchool" in $$props) $$invalidate(4, selectedSchool = $$props.selectedSchool);
     		if ("selectedSchoolName" in $$props) $$invalidate(5, selectedSchoolName = $$props.selectedSchoolName);
     		if ("selectedBonus" in $$props) $$invalidate(10, selectedBonus = $$props.selectedBonus);
     	};
@@ -14917,12 +14716,12 @@ resolved at -1 TN if Simplicity is active.`
     		c: function create() {
     			t0 = text("PCP (");
     			t1 = text(/*pcpRemaining*/ ctx[11]);
-    			t2 = text("\n      remaining)\n      ");
+    			t2 = text("\r\n      remaining)\r\n      ");
     			input = element("input");
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "14");
     			attr_dev(input, "max", "30");
-    			add_location(input, file, 69, 6, 1537);
+    			add_location(input, file, 69, 6, 1606);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -16431,35 +16230,35 @@ resolved at -1 TN if Simplicity is active.`
     			hr11 = element("hr");
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
-    			add_location(link, file, 53, 2, 1192);
+    			add_location(link, file, 53, 2, 1245);
     			attr_dev(meta0, "charset", "utf-8");
-    			add_location(meta0, file, 59, 2, 1331);
+    			add_location(meta0, file, 59, 2, 1390);
     			attr_dev(meta1, "name", "viewport");
     			attr_dev(meta1, "content", "width=device-width, initial-scale=1, shrink-to-fit=no");
-    			add_location(meta1, file, 60, 2, 1358);
-    			add_location(head, file, 58, 0, 1322);
-    			add_location(hr0, file, 72, 2, 1618);
-    			add_location(hr1, file, 78, 2, 1737);
-    			add_location(hr2, file, 88, 2, 1930);
-    			add_location(hr3, file, 94, 2, 2038);
-    			add_location(hr4, file, 100, 2, 2155);
-    			add_location(hr5, file, 106, 2, 2279);
-    			add_location(hr6, file, 112, 2, 2404);
-    			add_location(hr7, file, 118, 2, 2506);
-    			add_location(hr8, file, 127, 2, 2603);
-    			add_location(hr9, file, 128, 2, 2612);
-    			add_location(p0, file, 129, 4, 2623);
-    			add_location(p1, file, 130, 4, 2672);
-    			add_location(p2, file, 131, 4, 2699);
-    			add_location(p3, file, 132, 4, 2738);
-    			add_location(p4, file, 133, 4, 2775);
-    			add_location(p5, file, 134, 4, 2806);
-    			add_location(p6, file, 135, 4, 2854);
-    			add_location(p7, file, 136, 4, 2886);
-    			add_location(hr10, file, 137, 4, 2915);
-    			add_location(hr11, file, 143, 4, 2991);
+    			add_location(meta1, file, 60, 2, 1418);
+    			add_location(head, file, 58, 0, 1380);
+    			add_location(hr0, file, 72, 2, 1690);
+    			add_location(hr1, file, 78, 2, 1815);
+    			add_location(hr2, file, 88, 2, 2018);
+    			add_location(hr3, file, 94, 2, 2132);
+    			add_location(hr4, file, 100, 2, 2255);
+    			add_location(hr5, file, 106, 2, 2385);
+    			add_location(hr6, file, 112, 2, 2516);
+    			add_location(hr7, file, 118, 2, 2624);
+    			add_location(hr8, file, 127, 2, 2730);
+    			add_location(hr9, file, 128, 2, 2740);
+    			add_location(p0, file, 129, 4, 2752);
+    			add_location(p1, file, 130, 4, 2802);
+    			add_location(p2, file, 131, 4, 2830);
+    			add_location(p3, file, 132, 4, 2870);
+    			add_location(p4, file, 133, 4, 2908);
+    			add_location(p5, file, 134, 4, 2940);
+    			add_location(p6, file, 135, 4, 2989);
+    			add_location(p7, file, 136, 4, 3022);
+    			add_location(hr10, file, 137, 4, 3052);
+    			add_location(hr11, file, 143, 4, 3134);
     			attr_dev(main, "class", "svelte-1e9puaw");
-    			add_location(main, file, 64, 0, 1463);
+    			add_location(main, file, 64, 0, 1527);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

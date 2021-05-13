@@ -1,39 +1,7 @@
 export const races = [{
   name: "Human",
   tier: 1,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
-  {
-    name: 'Agility',
-    value: 0
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
-  ],
+  attributeMods: [],
   characteristics: [{
     name: "Willing to Learn",
     description: `Humans are flexible creatures by nature, and learning is
@@ -60,26 +28,6 @@ weaknesses. Only Humans may benefit from the Flaw arc.`
   {
     name: 'Agility',
     value: 1
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
   },
   {
     name: 'Perception',
@@ -139,14 +87,7 @@ Blinding is still Blinding. `
 }, {
   name: "Dwarf",
   tier: 2,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
-  {
-    name: 'Agility',
-    value: 0
-  },
+  attributeMods: [
   {
     name: 'Endurance',
     value: 2
@@ -155,22 +96,6 @@ Blinding is still Blinding. `
     name: 'Health',
     value: 1
   },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
   ],
   characteristics: [{
     name: "Short and Stout",
@@ -201,38 +126,11 @@ bleed rolls`
 }, {
   name: "Seablooded",
   tier: 2,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
+  attributeMods: [
   {
     name: 'Agility',
     value: 1
   },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
   ],
   characteristics: [
     {
@@ -255,33 +153,10 @@ bleed rolls`
 }, {
   name: "Zell",
   tier: 3,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
+  attributeMods: [
   {
     name: 'Agility',
     value: 1
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
   },
   {
     name: 'Perception',
@@ -445,38 +320,15 @@ how vile.`
 }, {
   name: "Burdinadin",
   tier: 3,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
+  attributeMods: [
   {
     name: 'Agility',
     value: 1
   },
   {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
     name: 'Intelligence',
     value: 1
   },
-  {
-    name: 'Perception',
-    value: 0
-  }
   ],
   characteristics: [
     {
@@ -595,26 +447,6 @@ than their HLT + WIL. `
   {
     name: 'Agility',
     value: 1
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
   },
   {
     name: 'Perception',
@@ -756,38 +588,11 @@ after bleed.`
 }, {
   name: "Vampire",
   tier: 3,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
+  attributeMods: [
   {
     name: 'Agility',
     value: 2
   },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
   ],
   characteristics: [
     {
@@ -879,14 +684,6 @@ Vampires that are killed immediately crumble into piles of powdered carbon, rese
     value: -1
   },
   {
-    name: 'Agility',
-    value: 0
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
     name: 'Health',
     value: -2
   },
@@ -895,17 +692,9 @@ Vampires that are killed immediately crumble into piles of powdered carbon, rese
     value: 2
   },
   {
-    name: 'Wit',
-    value: 0
-  },
-  {
     name: 'Intelligence',
     value: 2
   },
-  {
-    name: 'Perception',
-    value: 0
-  }
   ],
   characteristics: [
     {
@@ -948,38 +737,11 @@ An Orredin starts with 1 Gnosis, and can increase their Gnosis cap in the follow
 }, {
   name: "Star Vampire",
   tier: 5,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
+  attributeMods: [
   {
     name: 'Agility',
     value: 2
   },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
   ],
   characteristics: [
     {
@@ -1078,38 +840,7 @@ Ascendants cannot be resurrected as Vampires, and drinking an Ascendant’s bloo
 }, {
   name: "Sarturi Chosen",
   tier: 5,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
-  {
-    name: 'Agility',
-    value: 0
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
+  attributeMods: [
   ],
   characteristics: [
     {
@@ -1237,38 +968,7 @@ the last 24 hours.`
 }, {
   name: "Genosian Paladin",
   tier: 5,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
-  {
-    name: 'Agility',
-    value: 0
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
+  attributeMods: [
   ],
   characteristics: [
     {
@@ -1498,38 +1198,7 @@ Paladin approaches.`
 }, {
   name: "Dessian Silver Guard",
   tier: 5,
-  attributeMods: [{
-    name: 'Strength',
-    value: 0
-  },
-  {
-    name: 'Agility',
-    value: 0
-  },
-  {
-    name: 'Endurance',
-    value: 0
-  },
-  {
-    name: 'Health',
-    value: 0
-  },
-  {
-    name: 'Willpower',
-    value: 0
-  },
-  {
-    name: 'Wit',
-    value: 0
-  },
-  {
-    name: 'Intelligence',
-    value: 0
-  },
-  {
-    name: 'Perception',
-    value: 0
-  }
+  attributeMods: [
   ],
   characteristics: [
     {

@@ -127,7 +127,7 @@ function getCHA(input) {
   getAttrByName("Perception", input)) / 2);
 }
 
-function getSDB(input) {
+function getSDB(input) { //khopfix sbd = str up to 4, +1 for every 2 beyond that
   return getAttrByName("Strength", input) * 2;
 }
 
