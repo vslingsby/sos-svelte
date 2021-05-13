@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
 
   import Talents from "../talents/talents.svelte";
-  import SuperiorManeuvers from "./superiormaneuvers.svelte"
+  import SuperiorManeuvers from "./superiormaneuvers.svelte";
 
   import { proficiencyList } from "../proficiencies/proficiencylist.js";
 
@@ -11,7 +11,7 @@
   import { burdSchools } from "./burdschools.js";
   import { homebrewSchools } from "./homebrewschools.js";
 
-  import { character } from "../stores.js"
+  import { character } from "../stores.js";
 
   const pcpToPoints = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27];
   const schoolPointCosts = [
@@ -75,11 +75,13 @@
 
   function addSchool(schoolName) {
     let wrongSchool = false;
-    activeSchools.filter(school => school.level > 0).forEach( school => {
-      if (school.name != schoolName) {
-        wrongSchool = true;
-      }
-    })
+    activeSchools
+      .filter((school) => school.level > 0)
+      .forEach((school) => {
+        if (school.name != schoolName) {
+          wrongSchool = true;
+        }
+      });
     if (wrongSchool) {
       updateVars();
       return;
@@ -152,6 +154,11 @@
       }
       profs++;
       profTotal += profCost;
+      if (selectedSchool.hasOwnProperty("allowedProficiencies")) {
+        if (selectedSchool.allowedProficiencies.indexOf(activeProficiencies[n]) === -1) {
+          profTotal++;
+        }
+      }
     }
     sum += profTotal;
     return sum;
@@ -191,7 +198,7 @@
     activeSchools = activeSchools;
     superiorManeuvers = getSuperiorManeuvers(getHighestSchoolLevel());
     pointsUsed = getPointsUsed();
-    talents = getTalents()
+    talents = getTalents();
   }
 
   function getSelectedBonusByName(bonusName) {
@@ -239,22 +246,22 @@
   $: talents = getTalents();
 
   $: {
-    let charSchools = activeSchools.filter(school => school.level > 0)
-    charSchools.forEach( school => {
+    let charSchools = activeSchools.filter((school) => school.level > 0);
+    charSchools.forEach((school) => {
       school.proficiencies = activeProficiencies;
-    })
-    charSchools.forEach(charSchool => {
+    });
+    charSchools.forEach((charSchool) => {
       let found = false;
-      $character.schools.forEach(school => {
+      $character.schools.forEach((school) => {
         if (charSchool.name === school.name) {
           found = true;
           school.level = charSchool.level;
         }
-      })
+      });
       if (!found) {
         $character.schools.push(charSchool);
       }
-    })
+    });
   }
 </script>
 
@@ -295,6 +302,11 @@
   <strong>Requirements:
   </strong>{selectedSchool.requirements ? selectedSchool.requirements : 'None'}
 </p>
+{#if selectedSchool.hasOwnProperty('note')}
+  {#if selectedSchool.note}
+    <p><strong>Note: </strong>{selectedSchool.note}</p>
+  {/if}
+{/if}
 <p><strong>Cost: </strong>{selectedSchool.cost}</p>
 <p><strong>Proficiencies:</strong> {selectedSchool.profNum}</p>
 {#each selectedSchool.bonuses as bonus}
@@ -339,5 +351,5 @@
   {/each}
 </Row>
 
-<Talents maxTalents={talents}/>
-<SuperiorManeuvers maxManeuvers={superiorManeuvers}/>
+<Talents maxTalents={talents} />
+<SuperiorManeuvers maxManeuvers={superiorManeuvers} />
