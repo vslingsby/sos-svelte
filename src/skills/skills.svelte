@@ -22,11 +22,21 @@
 
   let activeSkills = [];
   let activePackets = [];
+  let skills = JSON.parse(JSON.stringify(skillList));
   activeSkills = JSON.parse(JSON.stringify(skillList));
   activePackets = JSON.parse(JSON.stringify(packetList));
   let packetSkills = [];
   export let attributes = [];
   export let usedPCP = 1;
+
+  skills.forEach((skill, i) => {
+    let obj = {
+      name: skill,
+      level: 0,
+      specializations: [],
+    };
+    skills[i] = obj;
+  })
 
   activeSkills.forEach((skill, i) => {
     let obj = {
@@ -138,27 +148,6 @@
     } else return undefined;
   }
 
-  function getMinSkillInput(skillName) {
-    let min = 0;
-    packetSkills
-      .filter((skill) => skill.name === skillName)
-      .forEach((skill) => {
-        if (min < skill.level) {
-          min = skill.level;
-        }
-      });
-    return min;
-  }
-
-  function updateInputs() {
-    activeSkills.forEach((skill) => {
-      let minInput = getMinSkillInput(skill.name);
-      if (skill.level < minInput) {
-        skill.level = minInput;
-      }
-    });
-  }
-
   function decrementInputsPacket(packetName) {
     let packet = activePackets.filter(
       (packet) => packet.name === packetName
@@ -169,13 +158,6 @@
         if (getSkillAndSpec(skill)) {
           skill = getSkillAndSpec(skill)[0];
         }
-        activeSkills
-          .filter(
-            (activeSkill) => activeSkill.name === skill && activeSkill.level > 0
-          )
-          .forEach((activeSkill) => {
-            activeSkill.level--;
-          });
       });
     packet.skills
       .filter((skills) => Array.isArray(skills))
@@ -184,13 +166,6 @@
         if (getSkillAndSpec(skill)) {
           skill = getSkillAndSpec(skill)[0];
         }
-        activeSkills
-          .filter(
-            (activeSkill) => activeSkill.name === skill && activeSkill.level > 0
-          )
-          .forEach((activeSkill) => {
-            activeSkill.level--;
-          });
       });
   }
 
@@ -251,23 +226,41 @@
     activeSkills = activeSkills;
     activePackets = activePackets;
     packetSkills = packetSkills;
-    updateInputs();
     usedPCP = getUsedPCP();
     usedPoints = getPointCost();
   }
 
+  function evalActiveSkills() {
+    let list = [];
+
+    list = JSON.parse(JSON.stringify(skills));
+
+    list.forEach(skill => {
+      packetSkills.filter(packetSkill => packetSkill.name === skill.name).forEach( packetSkill =>{
+        skill.level += packetSkill.level;
+        skill.specializations.push(packetSkills.specializations);
+      })
+    })
+    return list;
+  }
+
+  $: usedPoints = 0;
   $: int =
     attributes.length > 0
       ? attributes.filter((attr) => attr.name === "Intelligence")[0].value
       : 1;
-  $: activeSkills = activeSkills;
-  $: activePackets = activePackets;
-  $: packetSkills = packetSkills;
-  $: usedPCP = usedPCP;
-  $: usedPoints = 0;
-
   $: {
     $character.skills = activeSkills.filter(skill => skill.level > 0);
+    //console.log(JSON.stringify(packetSkills));
+
+    activeSkills = evalActiveSkills();
+
+    packetSkills = packetSkills;
+    activePackets = activePackets;
+    activeSkills = activeSkills;
+    usedPCP = usedPCP;
+
+
   }
 </script>
 
@@ -303,17 +296,47 @@
 <hr />
 <h3>Skills</h3>
 <Row>
-  {#each activeSkills as skill}
+  <Col>
+    <p><strong>Skill Name</strong></p>
+  </Col>
+  <Col>
+    <p><strong>Points</strong></p>
+  </Col>
+  <Col>
+    <p><strong>Packets</strong></p>
+  </Col>
+  <Col>
+    <p><strong>Total</strong></p>
+  </Col>
+</Row>
+  {#each skills as skill}
+  <Row>
     <Col>
       <p>{skill.name}</p>
+    </Col>
+    <Col>
       <p>
         <input
           type="number"
           bind:value={skill.level}
-          min={getMinSkillInput(skill.name)}
+          min=0
           max="8"
           on:change={updateVars} />
       </p>
     </Col>
+    <Col>
+    {#if packetSkills.length > 0}
+      {#if packetSkills.filter(packetSkill => packetSkill.name === skill.name).length > 0 }
+        <p>{packetSkills.filter(packetSkill => packetSkill.name === skill.name)[0].level}</p>
+      {:else}
+      <p>0</p>
+      {/if}
+      {:else}
+      <p>0</p>
+    {/if}
+    </Col>
+    <Col>
+    <p>{activeSkills.filter( activeSkill => activeSkill.name === skill.name)[0].level}</p>
+    </Col>
+    </Row>
   {/each}
-</Row>
