@@ -17,12 +17,59 @@ let attributes = [
   {name: 'Magic', value: 0}
 ]
 
+let compoundAttributes = [
+  {
+    name: "ADR",
+    value: function (attributes) {
+      return Math.floor((getAttrByName("Agility",attributes) + getAttrByName("Wit",attributes)) / 2);
+    }
+  },
+  {
+    name: "MOB",
+    value: function (attributes) { //racial modifiers
+        return Math.floor((getAttrByName("Strength", attributes) + getAttrByName("Wit", attributes) +
+        getAttrByName("Endurance", attributes)) / 2);
+      }
+  },
+  {
+    name: "CAR",
+    value: function (attributes) {
+      return Math.floor((getAttrByName("Strength", attributes) + getAttrByName("Endurance", attributes)));
+    }
+  },
+  {
+    name: "CHA",
+    value: function (attributes) {
+      return Math.floor((getAttrByName("Willpower", attributes) + getAttrByName("Wit", attributes) +
+      getAttrByName("Perception", attributes)) / 2);
+    }
+  },
+  {
+    name: "SDB",
+    value: function (attributes) { //khopfix sbd = str up to 4, +1 for every 2 beyond that
+      return getAttrByName("Strength", attributes) * 2;
+    }
+  },
+  {
+    name: "TOU",
+    value: function (attributes) { //there are racial modifiers to this
+      return 4;
+    }
+  },
+  {
+    name: "Grit",
+    value: function (attributes) {
+      return Math.floor((getAttrByName("Willpower",attributes) / 2));
+    }
+  },
+]
+
 const attributePCPCosts = [22,23,24,27,31,35,40,45,50,56];
 const attributePointCosts = [0,1,2,3,4,5,6,7,8,10,12,14,16];
 
-function getAttributePointsUsed(input) {
+function getAttributePointsUsed(attributes) {
   let sum = 0;
-  input.forEach((attribute) => {
+  attributes.forEach((attribute) => {
     if (attribute.name == "Magic") {
       return;
     }
@@ -31,8 +78,8 @@ function getAttributePointsUsed(input) {
   return sum;
 }
 
-function getAttributesPCP(input) {
-  let sum = getAttributePointsUsed(input)
+function getAttributesPCP(attributes) {
+  let sum = getAttributePointsUsed(attributes)
   if (sum < attributePCPCosts[0]) {
     return 1;
   }
@@ -66,9 +113,9 @@ function getTotalAttributes(base, race) {
   return totals;
 }
 
-function getAttrByName(name, input) {
-  let value = 0;
-  input.forEach( (attribute) => {
+function getAttrByName(name, attributes) {
+  let value;
+  attributes.forEach( (attribute) => {
     if (attribute.name === name) {
       value = attribute.value;
     }
@@ -76,68 +123,30 @@ function getAttrByName(name, input) {
   return value;
 }
 
+function getCompoundByName(name, attributes) {
+  let value;
+  compoundAttributes.forEach( (attribute) => {
+    if (attribute.name === name) {
+      value = attribute.value(attributes);
+    }
+  })
+  return value;
+}
+
 function getCompounds(totals) {
-  let compound = {};
   let compounds = [];
-  compound.name = "Adroitness";
-  compound.value = getADR(totals);
-  compounds.push(compound);
-  compound = {};
-  compound.name = "Mobility";
-  compound.value = getMOB(totals);
-  compounds.push(compound);
-  compound = {};
-  compound.name = "Carry";
-  compound.value = getCAR(totals);
-  compounds.push(compound);
-  compound = {};
-  compound.name = "Charisma";
-  compound.value = getCHA(totals);
-  compounds.push(compound);
-  compound = {};
-  compound.name = "Toughness";
-  compound.value = getTOU(totals);
-  compounds.push(compound);
-  compound = {};
-  compound.name = "Strength Damage Bonus";
-  compound.value = getSDB(totals);
-  compounds.push(compound);
-  compound = {};
-  compound.name = "Grit";
-  compound.value = getGrit(totals);
-  compounds.push(compound);
+  let compoundNames = ["Adroitness","Mobility","Carry","Charisma","Toughness","SDB","Grit"]
+  let compoundShort = ["ADR","MOB","CAR","CHA","TOU","SDB","Grit"];
+  compoundNames.forEach( (name, i) => {
+    let obj = {};
+    obj.name = name;
+    obj.value = getCompoundByName(compoundShort[i],totals);
+    compounds.push(obj);
+  })
   return compounds;
 }
 
-function getADR(input) {
-  return Math.floor((getAttrByName("Agility", input) + getAttrByName("Wit", input)) / 2);
-}
 
-function getMOB(input) { //racial modifiers
-  return Math.floor((getAttrByName("Strength", input) + getAttrByName("Wit", input) +
-  getAttrByName("Endurance", input)) / 2);
-}
-
-function getCAR(input) {
-  return Math.floor((getAttrByName("Strength", input) + getAttrByName("Endurance", input)));
-}
-
-function getCHA(input) {
-  return Math.floor((getAttrByName("Willpower", input) + getAttrByName("Wit", input) +
-  getAttrByName("Perception", input)) / 2);
-}
-
-function getSDB(input) { //khopfix sbd = str up to 4, +1 for every 2 beyond that
-  return getAttrByName("Strength", input) * 2;
-}
-
-function getTOU(input) { //there are racial modifiers to this
-  return 4;
-}
-
-function getGrit(input) {
-  return Math.floor((getAttrByName("Willpower",input) / 2));
-}
 
 $: (usedPCP = getAttributesPCP(attributes))
 $: compounds = getCompounds(getTotalAttributes(attributes,race));
