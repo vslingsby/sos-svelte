@@ -16,6 +16,7 @@ $: currentWealthPoints = selectedWealth.asset
 
 $: {
   $character.wealth.socialClass = selectedWealth.name;
+  $character.wealth.money = selectedWealth.wealth;
 }
 
 </script>

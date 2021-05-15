@@ -27,8 +27,12 @@ let compoundAttributes = [
   {
     name: "MOB",
     value: function (attributes) { //racial modifiers
-        return Math.floor((getAttrByName("Strength", attributes) + getAttrByName("Wit", attributes) +
+        let mob = Math.floor((getAttrByName("Strength", attributes) + getAttrByName("Wit", attributes) +
         getAttrByName("Endurance", attributes)) / 2);
+        if ($character.race === "Dwarf" || $character.race === "Goblin") {
+          mob -= 2;
+        }
+        return mob;
       }
   },
   {
@@ -53,7 +57,11 @@ let compoundAttributes = [
   {
     name: "TOU",
     value: function (attributes) { //there are racial modifiers to this
-      return 4;
+      let tou = 4;
+      if ($character.race === "Dwarf") {
+        tou++;
+      }
+      return tou;
     }
   },
   {
