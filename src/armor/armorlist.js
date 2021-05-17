@@ -555,21 +555,8 @@ export const armorList = [{
   }, {
     "location": "hip",
     "special": []
-  }],
-  "qualities": [{
-    "name": "Hard"
-  }],
-  "wt": "3",
-  "pp": 0,
-  "cost": [3, 15, 0],
-  "specials": []
-}, {
-  "name": "",
-  "type": "",
-  "avc": "",
-  "avp": "",
-  "avb": "",
-  "coverage": [{
+  },
+  {
     "location": "groin",
     "special": []
   }, {
@@ -579,10 +566,12 @@ export const armorList = [{
     "location": "knee",
     "special": []
   }],
-  "qualities": [],
-  "wt": "",
+  "qualities": [{
+    "name": "Hard"
+  }],
+  "wt": "3",
   "pp": 0,
-  "cost": [0, 0, 0],
+  "cost": [3, 15, 0],
   "specials": []
 }, {
   "name": "Lamellar Shirt",
