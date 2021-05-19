@@ -172,17 +172,17 @@ $: {
 {/each}
 </Row>
 <p>Used PCP: {usedPCP}</p>
-<p>Total Attributes:</p>
+<h3>Total Attributes:</h3>
 {#if race}
 <Row>
 {#each getTotalAttributes(attributes, race) as attribute}
 <Col>
-<p>{attribute.name}:</p><p>{attribute.value}</p>
+<p><strong>{attribute.name}</strong>:</p><p>{attribute.value}</p>
 </Col>
 {/each}
 {#each compounds as attribute}
 <Col>
-<p>{attribute.name}:</p><p>{attribute.value}</p>
+<p><strong>{attribute.name}:</strong></p><p>{attribute.value}</p>
 </Col>
 {/each}
 </Row>
