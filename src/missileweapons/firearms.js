@@ -307,16 +307,24 @@ function evalFiringMechanism(firearm) {
     }
 
     if (effect.type === 'LoseETA') {//lose eta
-
+        let index = -1;
+        firearm.qualities.forEach((quality, i) => {
+          if (quality.name === 'Easy to Aim') {
+            index = i;
+          }
+        })
+        if (index != -1) {
+          firearm.qualities = firearm.qualities.splice(index, 1);
+        }
     }
 
-    if (effect.type === 'tn') {
+    if (effect.type === 'tn') { //range tn
       firearm.missileTN += effect.value;
     }
   })
 
+  firearm.costMod += firing.costMod;
 
-  //range tn
   //costmod
   //allowed ammunition types
   //flint change
@@ -326,11 +334,33 @@ function evalFiringMechanism(firearm) {
 }
 
 function evalLoadingMechanism(firearm) {
+  let loading = firearm.modifications.loading;
+
+  loading.effects.forEach( effect => {
+    if (effect.type === 'wt') {
+      if (loading.hasOwnProperty('level')) {
+        firearm.wt += effect.value * loading.level;
+      } else firearm.wt += effect.value;
+    }
+    if (effect.type === 'costMod') {
+      if (loading.hasOwnProperty('level')) {
+        firearm.costMod += effect.value * loading.level;
+      } else firearm.costMod += effect.value;
+    }
+    if (effect.type === 'ammo') {
+      if (loading.hasOwnProperty('level')) {
+        firearm.costMod += effect.value * loading.level;
+      } else firearm.ammoCap += effect.value;
+    }
+  })
   //wt
   //costmod
   //load
   //ammo
+  firearm.wt += loading.wt;
+  firearm.costMod += loading.costMod;
 
+  return firearm;
 }
 
 function evalAmmo(firearm) {
