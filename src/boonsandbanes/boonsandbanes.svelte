@@ -15,12 +15,20 @@
       return 0;
     }
     let sum = 0;
-    boonList.forEach((boon) => {
+    let baneSum = 0;
+    boonList.filter( boon => boon.level > 0 && boon.cost[0] < 0).forEach( bane => {
+      baneSum += bane.cost[bane.level - 1];
+    })
+    if (baneSum < -15) {
+      baneSum = -15;
+    }
+
+    boonList.filter( boon => boon.level > 0 && boon.cost[0] > 0).forEach((boon) => {
       if (boon.level > 0) {
         sum += boon.cost[boon.level - 1];
       }
     });
-    return sum;
+    return sum + baneSum;
   }
 
   function getUsedPCP(input) {
