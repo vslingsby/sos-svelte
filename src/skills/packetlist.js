@@ -24,7 +24,7 @@ export const packetList = [{
   },
   {
     name: 'Guard',
-    skills: ['Intimidate', 'Knowledge (Criminal)', 'Observation', 'Observation']
+    skills: ['Intimidation', 'Knowledge (Criminal)', 'Observation', 'Observation']
   },
   {
     name: 'Hunter',
