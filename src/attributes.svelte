@@ -191,7 +191,7 @@
 
 <Row>
   <Col>
-    <h3>Attributes</h3>
+    <h2>Attributes</h2>
   </Col>
   <Col>
     <Button

@@ -1,8 +1,8 @@
 <script>
-  import { Button, Col, Row, Popover  } from "sveltestrap";
+  import { Button, Col, Row, Popover } from "sveltestrap";
   import { boonList } from "./boonlist.js";
   import { character } from "../stores.js";
-  import NewBoons from './newbanes.svelte';
+  import NewBoons from "./newbanes.svelte";
 
   const bnbPoints = [-15, -10, -5, 0, 5, 10, 15, 20, 25, 30];
 
@@ -12,16 +12,20 @@
     }
     let sum = 0;
     let baneSum = 0;
-    input.filter( boon => getBoonCost(boon) < 0).forEach( bane => {
-      baneSum += getBoonCost(bane);
-    })
+    input
+      .filter((boon) => getBoonCost(boon) < 0)
+      .forEach((bane) => {
+        baneSum += getBoonCost(bane);
+      });
     if (baneSum < -15) {
       baneSum = -15;
     }
 
-    input.filter( boon => getBoonCost(boon) > 0).forEach((boon) => {
+    input
+      .filter((boon) => getBoonCost(boon) > 0)
+      .forEach((boon) => {
         sum += getBoonCost(boon);
-    });
+      });
     return sum + baneSum;
   }
 
@@ -42,33 +46,39 @@
   }
 
   function getBoonCost(boon) {
-    return boonList.filter( listBoon => listBoon.name === boon.name)[0].cost[boon.level - 1];
+    return boonList.filter((listBoon) => listBoon.name === boon.name)[0].cost[
+      boon.level - 1
+    ];
   }
 
   function getBoonDescription(name, level) {
-    let listBoon = boonList.filter( listBoon => listBoon.name === name)[0];
+    let listBoon = boonList.filter((listBoon) => listBoon.name === name)[0];
     if (listBoon.cost.length === 1) {
       return listBoon.description[0];
     } else return listBoon.description[level];
   }
 
   function getSelectedCostHTML(boon) {
-    let listBoon = boonList.filter( listBoon => listBoon.name === boon.name)[0];
-    let string = ' (';
+    let listBoon = boonList.filter(
+      (listBoon) => listBoon.name === boon.name
+    )[0];
+    let string = " (";
     for (let n = 0; n < listBoon.cost.length; n++) {
-      if (n === boon.level -1) {
-        string += '<strong>' + listBoon.cost[n] + '</strong>';
+      if (n === boon.level - 1) {
+        string += "<strong>" + listBoon.cost[n] + "</strong>";
       } else string += listBoon.cost[n];
       if (n != listBoon.cost.length - 1) {
-        string += '/';
-      } else string += ')'
+        string += "/";
+      } else string += ")";
     }
     return string;
   }
 
   function addBoon(i) {
     let boon = $character.boonsAndBanes[i];
-    let listBoon = boonList.filter( listBoon => listBoon.name === boon.name)[0]
+    let listBoon = boonList.filter(
+      (listBoon) => listBoon.name === boon.name
+    )[0];
     if (boon.level < listBoon.cost.length) {
       boon.level++;
     }
@@ -84,33 +94,71 @@
   }
 
   export let usedPCP;
+  let visible = false;
   $: usedPCP = getUsedPCP($character.boonsAndBanes);
   $: addNewBoon = false;
 </script>
 
-<h2>Boones and Banes</h2>
-<p>Used PCP: {usedPCP}</p>
-<p>Used BnB Points: {getBoonPoints($character.boonsAndBanes)}</p>
-{#each $character.boonsAndBanes as boon, i}
 <Row>
-<Col>
-<p id={boon.name + i}><strong>{boon.name}</strong>{@html getSelectedCostHTML(boon)}</p>
-<Popover trigger="hover" target={boon.name+i} title={boon.name}>
-{getBoonDescription(boon.name,boon.level)}
-</Popover>
-</Col>
+  <Col>
+    <h2>Boons and Banes</h2>
+  </Col>
+  <Col>
+    <Button
+      on:click={() => {
+        visible = !visible;
+      }}>
+      {#if visible}
+        <p>Hide</p>
+      {:else}
+        <p>Show</p>
+      {/if}
+    </Button>
+  </Col>
+</Row>
 
-<Col>
-<Button on:click={() => {addBoon(i)}}>+</Button>
-<Button on:click={() => {removeBoon(i)}}>-</Button>
-</Col>
-</Row>
-{/each}
-{#if addNewBoon}
-<hr />
-<Row>
-  <NewBoons bind:addNewBoon={addNewBoon} />
-</Row>
-{:else}
-<Button on:click={() => {addNewBoon = true}}>Add New Boon/Bane</Button>
+{#if visible}
+  <p>Used PCP: {usedPCP}</p>
+  <p>Used BnB Points: {getBoonPoints($character.boonsAndBanes)}</p>
+  {#each $character.boonsAndBanes as boon, i}
+    <Row>
+      <Col>
+        <p id={boon.name + i}>
+          <strong>{boon.name}</strong>
+          {@html getSelectedCostHTML(boon)}
+        </p>
+        <Popover trigger="hover" target={boon.name + i} title={boon.name}>
+          {getBoonDescription(boon.name, boon.level)}
+        </Popover>
+      </Col>
+
+      <Col>
+        <Button
+          on:click={() => {
+            addBoon(i);
+          }}>
+          +
+        </Button>
+        <Button
+          on:click={() => {
+            removeBoon(i);
+          }}>
+          -
+        </Button>
+      </Col>
+    </Row>
+  {/each}
+  {#if addNewBoon}
+    <hr />
+    <Row>
+      <NewBoons bind:addNewBoon />
+    </Row>
+  {:else}
+    <Button
+      on:click={() => {
+        addNewBoon = true;
+      }}>
+      Add New Boon/Bane
+    </Button>
+  {/if}
 {/if}

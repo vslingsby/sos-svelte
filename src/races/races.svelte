@@ -49,38 +49,58 @@
     }
     return groups;
   }
+  let visible = true;
 </script>
 
-<h2>Races</h2>
-<select bind:value={selectedRaceValue}>
-  {#each sortRacesByTier(races) as group, n}
-    <optgroup label="Tier {n + 1}">
-      {#each group as race}
-        <option value={race.name}>{race.name}</option>
-      {/each}
-    </optgroup>
-  {/each}
-</select>
-<p>Tier: {selectedRace.tier}</p>
-<p>Characteristics</p>
-
-<div class="row justify-content-md-center">
-  {#each selectedRace.characteristics as characteristic}
-    <div class="col-sm-4">
-      <p><strong>{characteristic.name}</strong></p>
-      <p>{characteristic.description}</p>
-    </div>
-  {/each}
-</div>
-<p><strong>Attribute Modifiers:</strong></p>
-{#each selectedRace.attributeMods.filter((mod) => mod.value != 0) as mod}
-  <p>
-    {mod.name}:
-    {#if mod.value > 0}+{/if}{mod.value}
-  </p>
-{:else}
+<Row>
   <Col>
-    <p>N/A</p>
+    <h2>Races</h2>
   </Col>
-{/each}
-<p>Cost {usedPCP}</p>
+  <Col>
+    <Button
+      on:click={() => {
+        visible = !visible;
+      }}>
+      {#if visible}
+        <p>Hide</p>
+      {:else}
+        <p>Show</p>
+      {/if}
+    </Button>
+  </Col>
+</Row>
+
+{#if visible}
+  <select bind:value={selectedRaceValue}>
+    {#each sortRacesByTier(races) as group, n}
+      <optgroup label="Tier {n + 1}">
+        {#each group as race}
+          <option value={race.name}>{race.name}</option>
+        {/each}
+      </optgroup>
+    {/each}
+  </select>
+  <p>Tier: {selectedRace.tier}</p>
+  <p>Characteristics</p>
+
+  <Row cols={{ lg: 3, md: 2, sm: 1 }}>
+    {#each selectedRace.characteristics as characteristic}
+      <Col>
+        <p><strong>{characteristic.name}</strong></p>
+        <p>{characteristic.description}</p>
+      </Col>
+    {/each}
+  </Row>
+  <p><strong>Attribute Modifiers:</strong></p>
+  {#each selectedRace.attributeMods.filter((mod) => mod.value != 0) as mod}
+    <p>
+      {mod.name}:
+      {#if mod.value > 0}+{/if}{mod.value}
+    </p>
+  {:else}
+    <Col>
+      <p>N/A</p>
+    </Col>
+  {/each}
+  <p>Cost {usedPCP}</p>
+{/if}

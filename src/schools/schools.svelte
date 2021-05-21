@@ -263,10 +263,28 @@
       }
     });
   }
+  let visible = false;
 </script>
 
-<h2>Schools and Proficiencies</h2>
+<Row>
+  <Col>
+    <h2>Wealth and Social Class</h2>
+  </Col>
+  <Col>
+    <Button
+      on:click={() => {
+        visible = !visible;
+      }}>
+      {#if visible}
+        <p>Hide</p>
+      {:else}
+        <p>Show</p>
+      {/if}
+    </Button>
+  </Col>
+</Row>
 
+{#if visible}
 <Row>
   <Col>
     <p>Used PCP: {usedPCP}</p>
@@ -353,3 +371,5 @@
 
 <Talents maxTalents={talents} />
 <SuperiorManeuvers maxManeuvers={superiorManeuvers} />
+
+{/if}

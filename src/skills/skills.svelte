@@ -262,8 +262,27 @@
 
 
   }
+  let visible = false;
 </script>
+<Row>
+  <Col>
+    <h2>Skills and Packets</h2>
+  </Col>
+  <Col>
+    <Button
+      on:click={() => {
+        visible = !visible;
+      }}>
+      {#if visible}
+        <p>Hide</p>
+      {:else}
+        <p>Show</p>
+      {/if}
+    </Button>
+  </Col>
+</Row>
 
+{#if visible}
 <Row>
   <Col>
     <p>Used PCP: {usedPCP}</p>
@@ -340,3 +359,4 @@
     </Col>
     </Row>
   {/each}
+{/if}
