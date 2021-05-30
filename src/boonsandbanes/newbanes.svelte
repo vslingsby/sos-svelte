@@ -2,6 +2,7 @@
   import { Button, Col, Row } from "sveltestrap";
   import { boonList } from "./boonlist.js";
   import { character } from "../stores.js";
+  import * as animateScroll from "svelte-scrollto";
 
   export let addNewBoon;
   let boons = boonList;
@@ -14,6 +15,7 @@
     };
     $character.boonsAndBanes.push(obj);
     $character = $character;
+    animateScroll.scrollTo({element: '#BnBTitle'})
     addNewBoon = false;
   }
 </script>
