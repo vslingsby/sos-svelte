@@ -3,9 +3,9 @@
   import { character } from "../stores.js";
   export let currentWealthPoints;
   let assets = [];
-  let liquidated = 0;
+  export let liquidated = 0;
   let leftoverWealthPoints = 0;
-  let assetLevels = ["Minor", "Moderate", "Major"];
+  let assetLevels = ["Minor (W: 1 gp, L: 6 gp)", "Moderate (W: 2 gp, L: 12 gp)", "Major (W: 3 gp, L: 18 gp)"];
 
   function addNewAsset() {
     let obj = {
@@ -60,9 +60,20 @@
     </Col>
   </Row>
 {/each}
+<Row>
+<Col>
 <Button on:click={addNewAsset}>Add New Asset</Button>
-<p>Liquidated Wealth:</p><input
+</Col>
+</Row>
+<Row>
+<Col>
+<p>Liquidate Wealth:</p>
+</Col>
+<Col>
+<input
   type="number"
   min="0"
   max={currentWealthPoints - assets.length}
   bind:value={liquidated} />
+  </Col>
+  </Row>

@@ -25,7 +25,7 @@ export const wealthGrades = [
     asset: 0,
     benefits: {
       pick: 1,
-      options: ["Folks Back Home (3)", "Hale and Hearty(2)", "Literate (1)"]
+      options: ["Folks Back Home (3)", "Hale and Hearty (2)", "Literate (1)"]
     },
     pcp: 3
   },
@@ -35,7 +35,7 @@ export const wealthGrades = [
     asset: 1,
     benefits: {
       pick: 2,
-      options: ["Folks Back Home (3)", "Hale and Hearty(2)", "Literate (1)"]
+      options: ["Folks Back Home (3)", "Hale and Hearty (2)", "Literate (1)"]
     },
     pcp: 4
   },

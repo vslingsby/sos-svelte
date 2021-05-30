@@ -1,8 +1,10 @@
 <script>
 import { Button, Col, Row } from "sveltestrap";
+import { character } from "../stores.js";
   export let selectedWealth;
 
   $: selectedBoonOptions = [];
+  $: selectedBoons = [];
   $: selectedWealth = selectedWealth;
   $: {
     for (let n = 0; n < selectedBoonOptions.length; n++) {
@@ -25,6 +27,18 @@ import { Button, Col, Row } from "sveltestrap";
       }
     }
     return picked;
+    selectedBoons = selectedBoons;
+  }
+
+  function getSelectedBoons() {
+    let boons = [];
+    boons = selectedBoonOptions;
+    return boons;
+  }
+
+  $: {
+    selectedBoons = getSelectedBoons();
+    $character.wealth.benefits = selectedBoons;
   }
 </script>
 
