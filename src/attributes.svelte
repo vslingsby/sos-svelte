@@ -194,6 +194,9 @@
     <h2>Attributes</h2>
   </Col>
   <Col>
+    <h4>{usedPCP} PCP</h4>
+  </Col>
+  <Col>
     <Button
       on:click={() => {
         visible = !visible;

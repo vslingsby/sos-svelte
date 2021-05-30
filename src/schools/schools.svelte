@@ -268,7 +268,10 @@
 
 <Row>
   <Col>
-    <h2>Wealth and Social Class</h2>
+    <h2>Schools and Proficiencies</h2>
+  </Col>
+  <Col>
+    <h4>{usedPCP} PCP</h4>
   </Col>
   <Col>
     <Button
