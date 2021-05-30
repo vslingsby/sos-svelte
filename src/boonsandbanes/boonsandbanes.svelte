@@ -36,10 +36,13 @@
     }
     for (let n = 0; n < bnbPoints.length; n++) {
       if (n < bnbPoints.length - 1) {
-        if (sum >= bnbPoints[n] && sum < bnbPoints[n + 1]) {
-          return n + 1;
+        if (sum == bnbPoints[n+1]) {
+          return n+2;
+        } else if (sum > bnbPoints[n] && sum <= bnbPoints[n + 1]) {
+          return n + 2;
         }
-      } else if (sum == bnbPoints[n]) {
+      }
+      if (sum == bnbPoints[n]) {
         return n + 1;
       }
     }
