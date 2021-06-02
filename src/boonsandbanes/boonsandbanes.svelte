@@ -17,8 +17,8 @@
       .forEach((bane) => {
         baneSum += getBoonCost(bane);
       });
-    if (baneSum < -baneLimit) {
-      baneSum = -baneLimit;
+    if (baneSum < baneLimit) {
+      baneSum = baneLimit;
     }
 
     input
