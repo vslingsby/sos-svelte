@@ -68,7 +68,8 @@ export const character = writable({
       value: 0 // minor, moderate, major
     }
       */
-    ]
+    ],
+    benefits: []
   },
   getTotalAttributes: function() {
     let obj = JSON.parse(JSON.stringify(this.baseAttributes));

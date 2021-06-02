@@ -27,7 +27,6 @@
     wealth[1] = selectedWealth.wealth[1];
     wealth[2] = selectedWealth.wealth[2];
     wealth[0] += liquidated * 6;
-    console.log(wealth)
     return wealth;
   }
 
