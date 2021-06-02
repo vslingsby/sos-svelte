@@ -5,7 +5,7 @@
   import NewBoons from "./newbanes.svelte";
 
   const bnbPoints = [-15, -10, -5, 0, 5, 10, 15, 20, 25, 30];
-
+  const baneLimit = -30;
   function getBoonPoints(input) {
     if (input.length == 0) {
       return 0;
@@ -17,8 +17,8 @@
       .forEach((bane) => {
         baneSum += getBoonCost(bane);
       });
-    if (baneSum < -15) {
-      baneSum = -15;
+    if (baneSum < -baneLimit) {
+      baneSum = -baneLimit;
     }
 
     input
