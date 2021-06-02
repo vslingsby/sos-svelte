@@ -111,10 +111,10 @@
     }
     for (let n = 0; n < attributePCPCosts.length; n++) {
       if (n < attributePCPCosts.length - 1) {
-        if (sum >= attributePCPCosts[n] && sum < attributePCPCosts[n + 1]) {
-          return n + 1;
+        if (sum > attributePCPCosts[n] && sum <= attributePCPCosts[n + 1]) {
+          return n + 2;
         }
-      } else if (sum == attributePCPCosts[n]) {
+      } if (sum == attributePCPCosts[n]) {
         return n + 1;
       }
     }
@@ -210,6 +210,11 @@
   </Col>
 </Row>
 {#if visible}
+  <Row>
+  <Col>
+    <p>Used Points: {getAttributePointsUsed(attributes)} ({attributePCPCosts[getAttributesPCP(attributes) - 1]})</p>
+  </Col>
+  </Row>
   <Row>
     {#each attributes as attribute, i}
       <Col>
