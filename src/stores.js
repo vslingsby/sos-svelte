@@ -1,4 +1,37 @@
 import { writable } from 'svelte/store';
+import { races } from './races/racelist.js'
+
+
+function getRaceByName(name) {
+  let selectedRace = 'Human';
+  races.forEach((race) => {
+    if (race.name === name) {
+      selectedRace = race;
+    }
+  });
+  if (selectedRace.name) {
+    return selectedRace;
+  } else return races[0];
+}
+
+function getTotalAttributes(base, race) {
+  let totals = JSON.parse(JSON.stringify(base));
+  if (race.hasOwnProperty("attributeMods")) {
+    race.attributeMods.forEach((mod) => {
+      totals.forEach((attribute) => {
+        if (mod.name == attribute.name) {
+          attribute.value += mod.value;
+        }
+      });
+    });
+  }
+  totals.forEach((attribute) => {
+    if (attribute.value > 13) {
+      attribute.value = 13;
+    }
+  });
+  return totals;
+}
 
 export const character = writable({
   name: '',
@@ -71,9 +104,8 @@ export const character = writable({
     ],
     benefits: []
   },
-  getTotalAttributes: function() {
-    let obj = JSON.parse(JSON.stringify(this.baseAttributes));
-    console.log("Get total attributes TODO")
-    return obj;
-  }
+  getTotalAttributes: (base, race) => {
+    let totals = getTotalAttributes(base, getRaceByName(race))
+    return totals;
+}
 });

@@ -245,10 +245,7 @@
   }
 
   $: usedPoints = 0;
-  $: int =
-    attributes.length > 0
-      ? attributes.filter((attr) => attr.name === "Intelligence")[0].value
-      : 1;
+  $: int = 0
   $: {
     $character.skills = activeSkills.filter(skill => skill.level > 0);
     //console.log(JSON.stringify(packetSkills));
@@ -259,6 +256,7 @@
     activePackets = activePackets;
     activeSkills = activeSkills;
     usedPCP = usedPCP;
+    int = $character.getTotalAttributes($character.baseAttributes, $character.race).filter( attr => attr.name === "Intelligence")[0].value;
 
 
   }
