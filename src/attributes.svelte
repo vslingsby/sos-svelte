@@ -14,7 +14,6 @@
     { name: "Wit", value: 1 },
     { name: "Intelligence", value: 1 },
     { name: "Perception", value: 1 },
-    { name: "Magic", value: 0 },
   ];
 
   let compoundAttributes = [
