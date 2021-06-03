@@ -229,7 +229,7 @@
     return selected;
   }
 
-  $: isHuman = race.name === "Human";
+  $: isHuman = race.name === "Human" || race.name === "Sarturi Chosen" || race.name === "Genosian Paladin" || race.name === "Dessian Silver Guard";
   $: selectedSchoolName = "Scrapper";
   $: activeProficiencies = [];
   $: selectedBonusName = "";
