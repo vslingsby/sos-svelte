@@ -67,7 +67,15 @@
       name: "SDB",
       value: function (attributes) {
         //khopfix sbd = str up to 4, +1 for every 2 beyond that
-        return getAttrByName("Strength", attributes) * 2;
+        let str = getAttrByName("Strength", attributes);
+        if (str <= 4) {
+          return str;
+        } else if (str > 4) {
+          let sdb = 4;
+          str -= 4;
+          sdb += Math.floor(str / 2);
+          return sdb;
+        }
       },
     },
     {
