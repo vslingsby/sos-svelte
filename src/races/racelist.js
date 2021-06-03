@@ -709,7 +709,7 @@ halts, so long as they retain their Focus.`
     },
     {
       name: "Focus",
-      description: `Like all Din, the Orredin have a Focus which allows them to remain ageless and immortal. The Orredin focus is to simply be in a Warren with 50 or more Sorcerous Flow. The Flow can be utilized by devices or spells, so long as it is there, any Orredin in that Warren has Focus. Alternatively, consuming (usually drinking a solution of) about a teaspoon of powdered magestone (typically costing 10 gp)  will satisfy an Orredin's Focus for a year.`
+      description: `Like all Din, the Orredin have a Focus which allows them to remain ageless and immortal. The Orredin focus is to simply be in a Warren with 125 or more Sorcerous Flow. The Flow can be utilized by devices or spells, so long as it is there, any Orredin in that Warren has Focus. Alternatively, consuming (usually drinking a solution of) about a teaspoon of powdered magestone (typically costing 10 gp)  will satisfy an Orredin's Focus for a year.`
     },
     {
       name: "Apotheosis",
