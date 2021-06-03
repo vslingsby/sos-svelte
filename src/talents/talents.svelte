@@ -66,8 +66,9 @@ Eventually copy the talents page from COMP/CON
           charTalents.push(obj);
         });
         console.log(JSON.stringify(charTalents))
-        $character.schools[$character.schools.length - 1].talents = charTalents;
-      } else $character.schools[$character.schools.length - 1].talents = [];
+        console.log($character.schools[$character.schools.length - 1].talents)
+        //$character.schools[$character.schools.length - 1].talents = JSON.parse(JSON.stringify(charTalents));
+      } else console.log("nend")//$character.schools[$character.schools.length - 1].talents = [];
     }
   }
 
@@ -83,9 +84,6 @@ Eventually copy the talents page from COMP/CON
   $: selectedTalent = getTalentByName(selectedTalentName);
   $: usedTalents = getUsedTalents();
 
-  $: {
-
-  }
 </script>
 
 <h3>Talents</h3>

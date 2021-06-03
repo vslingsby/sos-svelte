@@ -228,6 +228,7 @@
     packetSkills = packetSkills;
     usedPCP = getUsedPCP();
     usedPoints = getPointCost();
+    int = $character.getTotalAttributes($character.baseAttributes, $character.race).filter( attr => attr.name === "Intelligence")[0].value;
   }
 
   function evalActiveSkills() {
@@ -249,16 +250,11 @@
   $: {
     $character.skills = activeSkills.filter(skill => skill.level > 0);
     //console.log(JSON.stringify(packetSkills));
-
     activeSkills = evalActiveSkills();
-
     packetSkills = packetSkills;
     activePackets = activePackets;
     activeSkills = activeSkills;
     usedPCP = usedPCP;
-    int = $character.getTotalAttributes($character.baseAttributes, $character.race).filter( attr => attr.name === "Intelligence")[0].value;
-
-
   }
   let visible = false;
 </script>
