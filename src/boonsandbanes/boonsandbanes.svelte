@@ -129,11 +129,11 @@
   {#each $character.boonsAndBanes as boon, i}
     <Row>
       <Col>
-        <p id={boon.name.replace(/\s/g,'') + i}> <!-- remove spaces from string or else popover breaks -->
+        <p id={boon.name.replace(/[\s\/]/g,'') + i}> <!-- remove spaces from string or else popover breaks -->
           <strong>{boon.name}</strong>
           {@html getSelectedCostHTML(boon)}
         </p>
-        <Popover trigger="hover" target={boon.name.replace(/\s/g,'') + i} title={boon.name}>
+        <Popover trigger="hover" target={boon.name.replace(/[\s\/]/g,'') + i} title={boon.name}>
           {getBoonDescription(boon.name, boon.level)}
         </Popover>
       </Col>
