@@ -32,7 +32,7 @@
   function getUsedPCP(input) {
     let sum = getBoonPoints(input);
     if (sum < bnbPoints[0]) {
-      return 0;
+      return 1;
     }
     for (let n = 0; n < bnbPoints.length; n++) {
       if (n < bnbPoints.length - 1) {
