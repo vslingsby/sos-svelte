@@ -5,7 +5,7 @@ export const wealthGrades = [
     asset: 0,
     benefits: {
       pick: 1,
-      options: ["Beautiful (2)", "Hale and Hearty (2)", "Languages (2)"]
+      options: ["Beautiful (3)", "Hale and Hearty (2)", "Languages (2)"]
     },
     pcp: 1
   },
