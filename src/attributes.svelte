@@ -232,7 +232,6 @@
       </Col>
     {/each}
   </Row>
-  <p>Used PCP: {usedPCP}</p>
   <h3>Total Attributes:</h3>
   {#if race}
     <Row>
