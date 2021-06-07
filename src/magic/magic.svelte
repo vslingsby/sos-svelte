@@ -1,8 +1,89 @@
 <script>
 import { Button, Col, Row } from 'sveltestrap';
+import Pyromancy from './pyromancy.svelte';
+import Sorcery from './sorcery.svelte';
+import Thaumaturgy from './thaumaturgy.svelte';
+
+const pcpToPoints = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27];
+
+function getUsedPCP() {
+  let sum = getUsedPoints();
+  sum += pyromancyPoints;
+  let pcp = -1;
+
+  for (let n = 0; n < pcpToPoints.length; n++) {
+    if (n < pcpToPoints.length - 1) {
+      if (sum > pcpToPoints[n] && sum <= pcpToPoints[n + 1]) {
+        pcp = n + 1;
+      }
+    }
+    if (sum == pcpToPoints[n]) {
+      pcp = n;
+    }
+  }
+  return pcp;
+}
+
+function addType(type) {
+  if (type === 'Pyromancy') {
+    pyromancy = true;
+  }
+  if (type === 'Sorcery') {
+    sorcery = true;
+  }
+  if (type === 'Thaumaturgy') {
+    thaumaturgy = true;
+  }
+  updateVars();
+}
+
+function removeType(type) {
+  if (type === 'Pyromancy') {
+    pyromancy = false;
+  }
+  if (type === 'Sorcery') {
+    sorcery = false;
+  }
+  if (type === 'Thaumaturgy') {
+    thaumaturgy = false;
+  }
+  updateVars();
+}
+
+function getUsedPoints() {
+  let sum = 0;
+
+  if (pyromancy) {
+    sum += 3;
+  }
+  if (thaumaturgy) {
+    sum += 3;
+  }
+  if (sorcery) {
+    sum += 3;
+  }
+
+  return sum;
+}
+
+function updateVars() {
+  usedPoints = getUsedPoints();
+  usedPCP = getUsedPCP();
+}
 
 export let usedPCP = 0;
+let pyromancy = false;
+let sorcery = false;
+let thaumaturgy = false;
 let visible = false;
+$: selectedMagicType = 'Pyromancy';
+$: pyromancyPoints = 0;
+$: sorceryPoints = 0;
+$: thaumaturgyPoints = 0;
+$: usedPoints = getUsedPoints();
+$: {
+  updateVars();
+}
 </script>
 <Row>
   <Col>
@@ -27,15 +108,42 @@ let visible = false;
 {#if visible}
   <Row>
   <Col>
-    <p>Used Points: {usedPCP}</p>
+    <p>Used Points: {usedPoints + pyromancyPoints}</p>
+  </Col>
+  <Col>
+    <Button on:click={updateVars}>Update</Button>
   </Col>
   </Row>
   <Row>
       <Col>
-        <p>Magic</p>
-        <p>
-          <input type="number" bind:value={usedPCP} min="0" max="10" />
-        </p>
+        <select bind:value={selectedMagicType}>
+          <option value='Pyromancy'>Pyromancy</option>
+          <option value='Sorcery'>Sorcery</option>
+          <option value='Thaumaturgy'>Thaumaturgy</option>
+      </select>
+      <Button on:click={addType(selectedMagicType)}>+</Button>
+      <Button on:click={removeType(selectedMagicType)}>-</Button>
       </Col>
   </Row>
+  {#if pyromancy}
+  <Row>
+    <Col>
+      <Pyromancy bind:usedPoints={pyromancyPoints}  />
+    </Col>
+  </Row>
+  {/if}
+  {#if sorcery}
+  <Row>
+    <Col>
+      <Sorcery />
+    </Col>
+  </Row>
+  {/if}
+  {#if thaumaturgy}
+  <Row>
+    <Col>
+      <Thaumaturgy />
+    </Col>
+  </Row>
+  {/if}
 {/if}
