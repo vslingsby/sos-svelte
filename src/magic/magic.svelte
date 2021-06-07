@@ -9,6 +9,8 @@ const pcpToPoints = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27];
 function getUsedPCP() {
   let sum = getUsedPoints();
   sum += pyromancyPoints;
+  sum += sorceryPoints;
+  sum += thaumaturgyPoints;
   let pcp = -1;
 
   for (let n = 0; n < pcpToPoints.length; n++) {
@@ -108,10 +110,10 @@ $: {
 {#if visible}
   <Row>
   <Col>
-    <p>Used Points: {usedPoints + pyromancyPoints}</p>
+    <p>Used Points: {usedPoints + pyromancyPoints + sorceryPoints + thaumaturgyPoints}</p>
   </Col>
   <Col>
-    <Button on:click={updateVars}>Update</Button>
+    <Button on:click={updateVars}>Update PCP</Button>
   </Col>
   </Row>
   <Row>
@@ -135,14 +137,14 @@ $: {
   {#if sorcery}
   <Row>
     <Col>
-      <Sorcery />
+      <Sorcery  bind:usedPoints={sorceryPoints}/>
     </Col>
   </Row>
   {/if}
   {#if thaumaturgy}
   <Row>
     <Col>
-      <Thaumaturgy />
+      <Thaumaturgy bind:usedPoints={thaumaturgyPoints}/>
     </Col>
   </Row>
   {/if}
