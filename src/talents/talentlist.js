@@ -483,6 +483,25 @@ export const talentList = [{
     "requirements": "Requirements: Cossack Drag talent, Riding level 8",
     "effect": "Effect: Your Mounted Disengage and Lean now resolve at TN 7."
   }]
+},
+{
+  "name": "HORSE ARCHER",
+  "children": [{
+    "name": "I. Born in the Saddle",
+    "description": "It’s easier to teach a rider to shoot than a shooter to ride.",
+    "requirements": "Requirements: Missile proficiency, Riding level 5",
+    "effect": "Effect: The Shoot penalty for being on horseback is reduced by 2."
+  }, {
+    "name": "II. Parthian Shot",
+    "description": "You can time your shots to the gaps in the horse’s gait.",
+    "requirements": "Requirements: Born in the Saddle talent, Riding level 8",
+    "effect": "Effect: Same as Born in the Saddle, but the penalty is reduced by 4."
+  }, {
+    "name": "III. Call of the Steppe",
+    "description": "Where the sky is open, the horse and bow shall reign eternal",
+    "requirements": "Requirements: Parthian Shot talent, Riding level 10",
+    "effect": "Effect: Same as Parthian Shot, but the penalty is reduced by 6."
+  }]
 }]
 
 
